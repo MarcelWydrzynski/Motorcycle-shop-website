@@ -1,0 +1,669 @@
+{
+  "motorcycles": [
+    {
+      "id": 1,
+      "brand": "Yamaha",
+      "model": "YZF-R1",
+      "cc": 998,
+      "horsepower": 200,
+      "category": "Sport",
+      "short_description": "The Yamaha YZF-R1 is a high-performance sportbike first introduced in 1998, known for its agility and speed.",
+      "long_description": "The Yamaha YZF-R1 is a flagship sportbike in Yamaha's lineup, featuring cutting-edge technology and engineering for unmatched performance. It incorporates MotoGP-inspired features such as crossplane crankshaft technology, advanced electronic rider aids, and aerodynamic bodywork, making it a favorite for both professional racers and enthusiasts.",
+      "performance": {
+        "0-100kph": "2.7 seconds",
+        "topSpeed": "299 km/h",
+        "fuelConsumption": "6.8 L/100km",
+        "weight": "200 kg",
+        "seatHeight": "855 mm",
+        "fuelCapacity": "17 liters"
+      },
+      "image": "/assets/motorcycles/yamaha yzf r1.png"
+    },
+    {
+      "id": 2,
+      "brand": "Honda",
+      "model": "CBR1000RR-R Fireblade",
+      "cc": 1000,
+      "horsepower": 214,
+      "category": "Sport",
+      "short_description": "Honda's flagship supersport bike, designed for precision and performance on the track.",
+      "long_description": "The Honda CBR1000RR-R Fireblade is a state-of-the-art sportbike, designed with input from Honda's MotoGP team. It features an advanced inline-four engine, aerodynamic design, and sophisticated electronics for superior handling and performance, making it perfect for racing enthusiasts and professionals.",
+      "performance": {
+        "0-100kph": "2.8 seconds",
+        "topSpeed": "300 km/h",
+        "fuelConsumption": "7.0 L/100km",
+        "weight": "201 kg",
+        "seatHeight": "830 mm",
+        "fuelCapacity": "16.1 liters"
+      },
+      "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png"
+    },
+    {
+      "id": 3,
+      "brand": "Ducati",
+      "model": "Panigale V4",
+      "cc": 1103,
+      "horsepower": 214,
+      "category": "Sport",
+      "short_description": "The Ducati Panigale V4 sets a new standard in sportbikes, combining power and Italian design.",
+      "long_description": "The Ducati Panigale V4 is a masterpiece of engineering and design, featuring a powerful 1103cc V4 engine and advanced aerodynamics. With cutting-edge electronics and race-inspired features, it delivers exceptional performance and handling, making it ideal for track days and spirited rides.",
+      "performance": {
+        "0-100kph": "2.6 seconds",
+        "topSpeed": "299 km/h",
+        "fuelConsumption": "7.5 L/100km",
+        "weight": "198 kg",
+        "seatHeight": "835 mm",
+        "fuelCapacity": "16 liters"
+      },
+      "image": "/assets/motorcycles/panigale v4.png"
+    },
+    {
+      "id": 4,
+      "brand": "Kawasaki",
+      "model": "Ninja H2",
+      "cc": 998,
+      "horsepower": 228,
+      "category": "Sport",
+      "short_description": "Kawasaki Ninja H2 features a supercharged engine, making it one of the fastest production bikes.",
+      "long_description": "The Kawasaki Ninja H2 is a hyperbike that redefines speed and performance with its supercharged engine. Designed for adrenaline seekers, it boasts cutting-edge aerodynamics, premium materials, and advanced rider aids, making it a thrilling ride on both road and track.",
+      "performance": {
+        "0-100kph": "2.5 seconds",
+        "topSpeed": "337 km/h",
+        "fuelConsumption": "8.0 L/100km",
+        "weight": "238 kg",
+        "seatHeight": "825 mm",
+        "fuelCapacity": "17 liters"
+      },
+      "image": "/assets/motorcycles/ninja h2.png"
+    },
+    {
+      "id": 5,
+      "brand": "Suzuki",
+      "model": "Hayabusa",
+      "cc": 1340,
+      "horsepower": 190,
+      "category": "Sport",
+      "short_description": "The Suzuki Hayabusa is a legendary hyperbike known for its speed and stability.",
+      "long_description": "The Suzuki Hayabusa has achieved iconic status as one of the fastest and most recognizable motorcycles ever built. It features a robust 1340cc inline-four engine, refined aerodynamics, and advanced electronics for smooth handling and acceleration.",
+      "performance": {
+        "0-100kph": "2.9 seconds",
+        "topSpeed": "312 km/h",
+        "fuelConsumption": "6.7 L/100km",
+        "weight": "264 kg",
+        "seatHeight": "800 mm",
+        "fuelCapacity": "20 liters"
+      },
+      "image": "/assets/motorcycles/hayabusa.png"
+    },
+    {
+      "id": 6,
+      "brand": "BMW",
+      "model": "S1000RR",
+      "cc": 999,
+      "horsepower": 205,
+      "category": "Sport",
+      "short_description": "A high-performance sportbike with advanced technology and razor-sharp handling.",
+      "long_description": "The BMW S1000RR combines power, precision, and innovative features. With its 999cc inline-four engine, aerodynamic design, and sophisticated electronics, it is built for riders seeking thrilling performance both on and off the track.",
+      "performance": {
+        "0-100kph": "2.6 seconds",
+        "topSpeed": "303 km/h",
+        "fuelConsumption": "6.9 L/100km",
+        "weight": "197 kg",
+        "seatHeight": "824 mm",
+        "fuelCapacity": "16.5 liters"
+      },
+      "image": "/assets/motorcycles/s1000rr.png"
+    },
+    {
+      "id": 7,
+      "brand": "Triumph",
+      "model": "Street Triple RS",
+      "cc": 765,
+      "horsepower": 123,
+      "category": "Naked",
+      "short_description": "A versatile naked bike offering sporty performance and style.",
+      "long_description": "The Triumph Street Triple RS is a lightweight and agile naked bike, featuring a 765cc triple engine that delivers strong midrange torque and top-end power. Its sharp handling and modern electronics make it a favorite for urban riding and spirited weekend rides.",
+      "performance": {
+        "0-100kph": "3.4 seconds",
+        "topSpeed": "225 km/h",
+        "fuelConsumption": "5.5 L/100km",
+        "weight": "168 kg",
+        "seatHeight": "825 mm",
+        "fuelCapacity": "17.4 liters"
+      },
+      "image": "/assets/motorcycles/Street Triple RS.png"
+    },
+    {
+      "id": 8,
+      "brand": "KTM",
+      "model": "1290 Super Duke R",
+      "cc": 1301,
+      "horsepower": 180,
+      "category": "Naked",
+      "short_description": "A powerful and aggressive naked bike designed for performance and versatility.",
+      "long_description": "The KTM 1290 Super Duke R is known as 'The Beast,' featuring a high-torque V-twin engine, lightweight chassis, and advanced electronics. It's built for riders looking for raw power and exceptional handling both on the road and track.",
+      "performance": {
+        "0-100kph": "2.9 seconds",
+        "topSpeed": "280 km/h",
+        "fuelConsumption": "6.5 L/100km",
+        "weight": "189 kg",
+        "seatHeight": "835 mm",
+        "fuelCapacity": "18 liters"
+      },
+      "image": "/assets/motorcycles/1290 Super Duke R.png"
+    },
+    {
+      "id": 9,
+      "brand": "Aprilia",
+      "model": "RSV4 1100 Factory",
+      "cc": 1099,
+      "horsepower": 217,
+      "category": "Sport",
+      "short_description": "A track-focused superbike offering top-tier performance and handling.",
+      "long_description": "The Aprilia RSV4 1100 Factory is engineered for high performance with its V4 engine, advanced electronics, and aerodynamic design. It provides exceptional speed and precision for track riders and sportbike enthusiasts.",
+      "performance": {
+        "0-100kph": "2.7 seconds",
+        "topSpeed": "305 km/h",
+        "fuelConsumption": "7.2 L/100km",
+        "weight": "199 kg",
+        "seatHeight": "845 mm",
+        "fuelCapacity": "17.9 liters"
+      },
+      "image": "/assets/motorcycles/RSV4 1100 Factory.png"
+    },
+    {
+      "id": 10,
+      "brand": "Harley-Davidson",
+      "model": "LiveWire",
+      "cc": 0,
+      "horsepower": 105,
+      "category": "Electric",
+      "short_description": "An all-electric motorcycle offering modern technology and eco-friendly performance.",
+      "long_description": "The Harley-Davidson LiveWire is an electric motorcycle designed for urban commuting and performance riding. It delivers instant torque, smooth acceleration, and cutting-edge features, making it a pioneer in electric motorcycling.",
+      "performance": {
+        "0-100kph": "3.0 seconds",
+        "topSpeed": "177 km/h",
+        "fuelConsumption": "NA",
+        "weight": "249 kg",
+        "seatHeight": "762 mm",
+        "fuelCapacity": "NA"
+      },
+      "image": "/assets/motorcycles/LiveWire.png"
+    },
+    {
+      "id": 11,
+      "brand": "MV Agusta",
+      "model": "Brutale 1000 RR",
+      "cc": 998,
+      "horsepower": 208,
+      "category": "Naked",
+      "short_description": "A high-performance naked bike with aggressive styling and advanced technology.",
+      "long_description": "The MV Agusta Brutale 1000 RR combines Italian design with powerful performance. Its 998cc inline-four engine, aerodynamic bodywork, and cutting-edge electronics make it ideal for riders who value both style and speed.",
+      "performance": {
+        "0-100kph": "3.0 seconds",
+        "topSpeed": "300 km/h",
+        "fuelConsumption": "7.6 L/100km",
+        "weight": "186 kg",
+        "seatHeight": "845 mm",
+        "fuelCapacity": "16 liters"
+      },
+      "image": "/assets/motorcycles/Brutale 1000 RR.png"
+    },
+    {
+      "id": 12,
+      "brand": "Indian",
+      "model": "FTR 1200",
+      "cc": 1203,
+      "horsepower": 120,
+      "category": "Naked",
+      "short_description": "A flat-track-inspired naked bike combining American heritage and modern performance.",
+      "long_description": "The Indian FTR 1200 is built for urban riding and fun on twisty roads. With a high-torque V-twin engine and a comfortable riding position, it offers both style and practicality for city dwellers and adventurers.",
+      "performance": {
+        "0-100kph": "3.5 seconds",
+        "topSpeed": "225 km/h",
+        "fuelConsumption": "5.8 L/100km",
+        "weight": "235 kg",
+        "seatHeight": "840 mm",
+        "fuelCapacity": "13 liters"
+      },
+      "image": "/assets/motorcycles/FTR 1300.png"
+    },
+    {
+      "id": 13,
+      "brand": "Kawasaki",
+      "model": "Z H2",
+      "cc": 998,
+      "horsepower": 197,
+      "category": "Naked",
+      "short_description": "A supercharged naked bike designed for thrilling performance and versatility.",
+      "long_description": "The Kawasaki Z H2 features a supercharged inline-four engine that delivers incredible power and acceleration. Its aggressive design and advanced electronics make it a top choice for performance enthusiasts.",
+      "performance": {
+        "0-100kph": "2.9 seconds",
+        "topSpeed": "280 km/h",
+        "fuelConsumption": "6.8 L/100km",
+        "weight": "239 kg",
+        "seatHeight": "830 mm",
+        "fuelCapacity": "19 liters"
+      },
+      "image": "/assets/motorcycles/z h2.png"
+    },
+    {
+      "id": 14,
+      "brand": "Zero Motorcycles",
+      "model": "SR/F",
+      "cc": 0,
+      "horsepower": 110,
+      "category": "Electric",
+      "short_description": "An all-electric naked bike offering instant torque and high performance.",
+      "long_description": "The Zero SR/F is an electric naked bike designed for everyday riders who demand high performance. With its instant torque and silent operation, it offers an eco-friendly alternative without sacrificing power and thrill.",
+      "performance": {
+        "0-100kph": "3.3 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "NA",
+        "weight": "224 kg",
+        "seatHeight": "795 mm",
+        "fuelCapacity": "NA"
+      },
+      "image": "/assets/motorcycles/srf.png"
+    },
+    {
+      "id": 15,
+      "brand": "Honda",
+      "model": "CB1000R",
+      "cc": 998,
+      "horsepower": 143,
+      "category": "Naked",
+      "short_description": "A naked bike that offers superb balance between power, handling, and comfort.",
+      "long_description": "The Honda CB1000R is a stylish naked bike that combines modern design with powerful performance. Its 998cc engine offers excellent acceleration and smooth power delivery, making it a versatile ride for both city and countryside.",
+      "performance": {
+        "0-100kph": "3.2 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "6.3 L/100km",
+        "weight": "212 kg",
+        "seatHeight": "815 mm",
+        "fuelCapacity": "16.2 liters"
+      },
+      "image": "/assets/motorcycles/CB1000R.png"
+    },
+    {
+      "id": 16,
+      "brand": "Triumph",
+      "model": "Bonneville T120",
+      "cc": 1200,
+      "horsepower": 80,
+      "category": "Retro",
+      "short_description": "A modern take on the classic Bonneville, with vintage styling and modern performance.",
+      "long_description": "The Triumph Bonneville T120 is a retro-style motorcycle that offers the best of both worlds: classic looks and modern features. Its 1200cc twin engine delivers smooth power and a relaxed ride, perfect for cruising or long-distance touring.",
+      "performance": {
+        "0-100kph": "5.3 seconds",
+        "topSpeed": "180 km/h",
+        "fuelConsumption": "4.9 L/100km",
+        "weight": "224 kg",
+        "seatHeight": "790 mm",
+        "fuelCapacity": "14.5 liters"
+      },
+      "image": "/assets/motorcycles/Bonneville T120.png"
+    },
+    {
+      "id": 17,
+      "brand": "BMW",
+      "model": "R NineT",
+      "cc": 1170,
+      "horsepower": 110,
+      "category": "Retro",
+      "short_description": "A modern classic offering a unique blend of performance, style, and comfort.",
+      "long_description": "The BMW R NineT combines retro-inspired design with modern engineering. Its 1170cc twin-cylinder engine offers an exciting riding experience, while its customizable design allows riders to make it their own.",
+      "performance": {
+        "0-100kph": "4.0 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "5.3 L/100km",
+        "weight": "221 kg",
+        "seatHeight": "805 mm",
+        "fuelCapacity": "17 liters"
+      },
+      "image": "/assets/motorcycles/R NineT.png"
+    },
+    {
+      "id": 18,
+      "brand": "Royal Enfield",
+      "model": "Meteor 350",
+      "cc": 349,
+      "horsepower": 20,
+      "category": "Cruiser",
+      "short_description": "A cruiser designed for comfort and easygoing rides.",
+      "long_description": "The Royal Enfield Meteor 350 is a laid-back cruiser that offers a smooth and comfortable ride. Its simple design and manageable power make it ideal for beginners and seasoned riders who appreciate easy cruising.",
+      "performance": {
+        "0-100kph": "8.0 seconds",
+        "topSpeed": "130 km/h",
+        "fuelConsumption": "3.7 L/100km",
+        "weight": "191 kg",
+        "seatHeight": "765 mm",
+        "fuelCapacity": "15 liters"
+      },
+      "image": "/assets/motorcycles/Meteor 350.png"
+    },
+    {
+      "id": 19,
+      "brand": "Yamaha",
+      "model": "Bolt R-Spec",
+      "cc": 942,
+      "horsepower": 54,
+      "category": "Cruiser",
+      "short_description": "A minimalist cruiser with a refined, retro design.",
+      "long_description": "The Yamaha Bolt R-Spec is a simple and stylish cruiser with a 942cc engine and a low-slung design. Perfect for riders who prefer minimalist bikes with a relaxed riding experience and the freedom of the open road.",
+      "performance": {
+        "0-100kph": "7.0 seconds",
+        "topSpeed": "150 km/h",
+        "fuelConsumption": "4.5 L/100km",
+        "weight": "251 kg",
+        "seatHeight": "690 mm",
+        "fuelCapacity": "13 liters"
+      },
+      "image": "/assets/motorcycles/Bolt R-Spec.png"
+    },
+    {
+      "id": 20,
+      "brand": "Royal Enfield",
+      "model": "Interceptor 650",
+      "cc": 648,
+      "horsepower": 47,
+      "category": "Retro",
+      "short_description": "A retro-style motorcycle with modern engineering for easy cruising.",
+      "long_description": "The Royal Enfield Interceptor 650 combines vintage looks with modern performance. With its parallel twin engine and comfortable ride, it is ideal for riders who appreciate classic design and relaxed cruising.",
+      "performance": {
+        "0-100kph": "6.5 seconds",
+        "topSpeed": "170 km/h",
+        "fuelConsumption": "5.0 L/100km",
+        "weight": "202 kg",
+        "seatHeight": "804 mm",
+        "fuelCapacity": "13.7 liters"
+      },
+      "image": "/assets/motorcycles/Interceptor 650.png"
+    },
+    {
+      "id": 21,
+      "brand": "Kawasaki",
+      "model": "Vulcan S",
+      "cc": 649,
+      "horsepower": 61,
+      "category": "Cruiser",
+      "short_description": "A modern cruiser with a customizable fit and comfortable ergonomics.",
+      "long_description": "The Kawasaki Vulcan S offers a unique cruiser experience with a parallel twin engine, smooth ride, and customizable fit. Perfect for riders seeking a laid-back cruiser with modern performance and style.",
+      "performance": {
+        "0-100kph": "5.5 seconds",
+        "topSpeed": "170 km/h",
+        "fuelConsumption": "5.3 L/100km",
+        "weight": "228 kg",
+        "seatHeight": "705 mm",
+        "fuelCapacity": "14 liters"
+      },
+      "image": "/assets/motorcycles/Vulcan S.png"
+    },
+    {
+      "id": 22,
+      "brand": "Honda",
+      "model": "Africa Twin",
+      "cc": 1084,
+      "horsepower": 102,
+      "category": "Adventure",
+      "short_description": "An adventure touring bike built for long-distance travel and off-road exploration.",
+      "long_description": "The Honda Africa Twin is built for riders who seek adventure and exploration. With its 1084cc engine, off-road capabilities, and long-distance comfort, it's a favorite among serious adventure riders.",
+      "performance": {
+        "0-100kph": "5.5 seconds",
+        "topSpeed": "190 km/h",
+        "fuelConsumption": "4.5 L/100km",
+        "weight": "238 kg",
+        "seatHeight": "850 mm",
+        "fuelCapacity": "18.8 liters"
+      },
+      "image": "/assets/motorcycles/Africa Twin.png"
+    },
+    {
+      "id": 23,
+      "brand": "Harley-Davidson",
+      "model": "Sportster S",
+      "cc": 1252,
+      "horsepower": 121,
+      "category": "Cruiser",
+      "short_description": "A modern take on Harley's iconic Sportster series, blending power and technology.",
+      "long_description": "The Harley-Davidson Sportster S features a 1252cc Revolution Max V-twin engine, delivering incredible power and torque for a thrilling ride. It combines classic Harley-Davidson styling with modern tech, making it perfect for both city rides and longer cruising.",
+      "performance": {
+        "0-100kph": "3.5 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "5.6 L/100km",
+        "weight": "228 kg",
+        "seatHeight": "795 mm",
+        "fuelCapacity": "11.8 liters"
+      },
+      "image": "/assets/motorcycles/Sportster S.png"
+    },
+    {
+      "id": 24,
+      "brand": "KTM",
+      "model": "790 Duke",
+      "cc": 799,
+      "horsepower": 105,
+      "category": "Naked",
+      "short_description": "A lightweight and agile naked bike designed for sharp handling.",
+      "long_description": "The KTM 790 Duke is known for its sharp handling and lightweight design. With a 799cc parallel-twin engine, it offers excellent power delivery and dynamic performance, making it a top choice for spirited riders and track enthusiasts.",
+      "performance": {
+        "0-100kph": "3.4 seconds",
+        "topSpeed": "230 km/h",
+        "fuelConsumption": "5.2 L/100km",
+        "weight": "169 kg",
+        "seatHeight": "825 mm",
+        "fuelCapacity": "14 liters"
+      },
+      "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png"
+    },
+    {
+      "id": 25,
+      "brand": "BMW",
+      "model": "K 1600 GTL",
+      "cc": 1649,
+      "horsepower": 160,
+      "category": "Touring",
+      "short_description": "A luxury touring bike designed for long-distance comfort and performance.",
+      "long_description": "The BMW K 1600 GTL is a fully-loaded touring bike designed to deliver a premium riding experience on long journeys. Its 1649cc six-cylinder engine offers smooth power, while the advanced electronics ensure a safe and comfortable ride.",
+      "performance": {
+        "0-100kph": "4.2 seconds",
+        "topSpeed": "210 km/h",
+        "fuelConsumption": "5.5 L/100km",
+        "weight": "350 kg",
+        "seatHeight": "750 mm",
+        "fuelCapacity": "26.5 liters"
+      },
+      "image": "/assets/motorcycles/K 1600 GTL.png"
+    },
+    {
+      "id": 26,
+      "brand": "Honda",
+      "model": "Gold Wing",
+      "cc": 1833,
+      "horsepower": 125,
+      "category": "Touring",
+      "short_description": "The Gold Wing is Honda's flagship touring bike, known for comfort and luxury.",
+      "long_description": "The Honda Gold Wing is an iconic touring motorcycle, designed for long-distance journeys in supreme comfort. Its 1833cc six-cylinder engine provides ample power, while its advanced features like infotainment systems and adjustable seating make it a favorite for serious tourers.",
+      "performance": {
+        "0-100kph": "5.3 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "6.2 L/100km",
+        "weight": "379 kg",
+        "seatHeight": "745 mm",
+        "fuelCapacity": "21 liters"
+      },
+      "image": "/assets/motorcycles/Gold Wing.png"
+    },
+    {
+      "id": 27,
+      "brand": "Yamaha",
+      "model": "FJR1300",
+      "cc": 1298,
+      "horsepower": 145,
+      "category": "Touring",
+      "short_description": "A sport-touring motorcycle that blends performance and comfort for long-distance riders.",
+      "long_description": "The Yamaha FJR1300 is a sport-touring motorcycle equipped with a 1298cc engine that balances power with long-distance comfort. With its advanced suspension, cruise control, and comfortable ergonomics, it's ideal for riders who enjoy covering long miles on the open road.",
+      "performance": {
+        "0-100kph": "4.7 seconds",
+        "topSpeed": "250 km/h",
+        "fuelConsumption": "5.4 L/100km",
+        "weight": "265 kg",
+        "seatHeight": "800 mm",
+        "fuelCapacity": "25 liters"
+      },
+      "image": "/assets/motorcycles/FJR1300.png"
+    },
+    {
+      "id": 28,
+      "brand": "Kawasaki",
+      "model": "Versys 1000",
+      "cc": 1043,
+      "horsepower": 120,
+      "category": "Adventure",
+      "short_description": "An adventure touring bike that balances comfort, power, and versatility.",
+      "long_description": "The Kawasaki Versys 1000 is designed for adventure and touring enthusiasts. With its 1043cc engine, long-travel suspension, and comfortable ergonomics, it offers a smooth ride across a variety of terrains, from highways to backroads.",
+      "performance": {
+        "0-100kph": "4.2 seconds",
+        "topSpeed": "210 km/h",
+        "fuelConsumption": "5.3 L/100km",
+        "weight": "250 kg",
+        "seatHeight": "840 mm",
+        "fuelCapacity": "21 liters"
+      },
+      "image": "/assets/motorcycles/Versys 1000.png"
+    },
+    {
+      "id": 29,
+      "brand": "Suzuki",
+      "model": "V-Strom 650",
+      "cc": 645,
+      "horsepower": 71,
+      "category": "Adventure",
+      "short_description": "A versatile and capable adventure bike with excellent value for money.",
+      "long_description": "The Suzuki V-Strom 650 is a mid-size adventure bike that offers a perfect balance between performance and practicality. Its 645cc V-twin engine delivers enough power for highway cruising and off-road excursions.",
+      "performance": {
+        "0-100kph": "5.7 seconds",
+        "topSpeed": "190 km/h",
+        "fuelConsumption": "5.2 L/100km",
+        "weight": "216 kg",
+        "seatHeight": "835 mm",
+        "fuelCapacity": "20 liters"
+      },
+      "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png"
+    },
+    {
+      "id": 30,
+      "brand": "BMW",
+      "model": "R1250GS",
+      "cc": 1254,
+      "horsepower": 136,
+      "category": "Adventure",
+      "short_description": "An all-terrain adventure bike built for ultimate touring and exploration.",
+      "long_description": "The BMW R1250GS is a legendary adventure bike known for its versatility and ruggedness. With its 1254cc boxer engine, advanced suspension, and adaptive riding modes, it's the go-to motorcycle for serious adventure riders.",
+      "performance": {
+        "0-100kph": "4.0 seconds",
+        "topSpeed": "200 km/h",
+        "fuelConsumption": "5.5 L/100km",
+        "weight": "249 kg",
+        "seatHeight": "850 mm",
+        "fuelCapacity": "20 liters"
+      },
+      "image": "/assets/motorcycles/R1250GS.png"
+    },
+    {
+      "id": 31,
+      "brand": "Triumph",
+      "model": "Tiger 900",
+      "cc": 888,
+      "horsepower": 94,
+      "category": "Adventure",
+      "short_description": "A multi-purpose adventure bike designed for long tours and off-road exploration.",
+      "long_description": "The Triumph Tiger 900 offers a balanced ride between on-road comfort and off-road capability. Its 888cc engine, upright ergonomics, and advanced suspension provide an excellent riding experience over a variety of terrains.",
+      "performance": {
+        "0-100kph": "4.8 seconds",
+        "topSpeed": "210 km/h",
+        "fuelConsumption": "5.1 L/100km",
+        "weight": "208 kg",
+        "seatHeight": "810 mm",
+        "fuelCapacity": "20 liters"
+      },
+      "image": "/assets/motorcycles/Tiger 900.png"
+    },
+    {
+      "id": 32,
+      "brand": "Honda",
+      "model": "NC750X",
+      "cc": 745,
+      "horsepower": 58,
+      "category": "Adventure",
+      "short_description": "A budget-friendly adventure bike with excellent fuel economy and comfort.",
+      "long_description": "The Honda NC750X is an affordable and practical adventure bike. With its fuel-efficient engine, smooth handling, and comfortable ergonomics, it is perfect for riders who want a reliable machine for both city commutes and weekend getaways.",
+      "performance": {
+        "0-100kph": "5.9 seconds",
+        "topSpeed": "175 km/h",
+        "fuelConsumption": "3.8 L/100km",
+        "weight": "218 kg",
+        "seatHeight": "830 mm",
+        "fuelCapacity": "14.1 liters"
+      },
+      "image": "/assets/motorcycles/NC750X.png"
+    },
+    {
+      "id": 33,
+      "brand": "Kawasaki",
+      "model": "Ninja 650",
+      "cc": 649,
+      "horsepower": 68,
+      "category": "Sport",
+      "short_description": "An entry-level sportbike with a perfect blend of performance and comfort.",
+      "long_description": "The Kawasaki Ninja 650 is a versatile sportbike that combines the thrills of a sports machine with the comfort of an everyday ride. Its 649cc engine delivers smooth power, making it perfect for new riders who want to explore the sportbike world.",
+      "performance": {
+        "0-100kph": "5.6 seconds",
+        "topSpeed": "190 km/h",
+        "fuelConsumption": "4.8 L/100km",
+        "weight": "191 kg",
+        "seatHeight": "790 mm",
+        "fuelCapacity": "15 liters"
+      },
+      "image": "/assets/motorcycles/Ninja 650.png"
+    },
+    {
+      "id": 34,
+      "brand": "Suzuki",
+      "model": "GSX-S750",
+      "cc": 749,
+      "horsepower": 112,
+      "category": "Sport",
+      "short_description": "A powerful middleweight sportbike with aggressive styling and great performance.",
+      "long_description": "The Suzuki GSX-S750 offers an exciting middleweight sportbike experience with its 749cc inline-four engine. With sharp handling, aggressive styling, and advanced features, it offers both beginners and experienced riders a thrilling ride.",
+      "performance": {
+        "0-100kph": "3.6 seconds",
+        "topSpeed": "220 km/h",
+        "fuelConsumption": "5.5 L/100km",
+        "weight": "213 kg",
+        "seatHeight": "820 mm",
+        "fuelCapacity": "16 liters"
+      },
+      "image": "/assets/motorcycles/GSX-S750.png"
+    },
+    {
+      "id": 35,
+      "brand": "Yamaha",
+      "model": "R6",
+      "cc": 599,
+      "horsepower": 118,
+      "category": "Sport",
+      "short_description": "A track-ready sportbike designed for high performance and agility.",
+      "long_description": "The Yamaha YZF-R6 is designed for riders who want a track-focused sportbike with exceptional agility and performance. Its 599cc engine delivers thrilling acceleration and speed, while its lightweight chassis ensures outstanding handling.",
+      "performance": {
+        "0-100kph": "3.0 seconds",
+        "topSpeed": "250 km/h",
+        "fuelConsumption": "6.0 L/100km",
+        "weight": "190 kg",
+        "seatHeight": "850 mm",
+        "fuelCapacity": "17 liters"
+      },
+      "image": "/assets/motorcycles/R6.png"
+    }
+  ]
+}
