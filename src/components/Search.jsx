@@ -1,5 +1,5 @@
 import React from "react";
-import CartIcon from "../../public/assets/Icons/services/Cart1.png";
+import SearchIcon from "../../public/assets/Icons/services/Search.png";
 
 const Search = () => {
   return (
@@ -7,9 +7,9 @@ const Search = () => {
       <input
         type="text"
         placeholder="What are you looking for?"
-        className="w-48 outline-none bg-transparent"
+        className="w-48 outline-none bg-transparent text-black"
       />
-      <img className="cursor-pointer" src={CartIcon} alt="" />
+      <img className="cursor-pointer " src={SearchIcon} alt="" />
     </div>
   );
 };
