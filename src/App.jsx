@@ -1,10 +1,10 @@
 import { useState } from "react";
 import TopHeader from "./components/TopHeader";
 import Container from "./components/Container";
-import data from "../motorcycles.json";
 import Header from "./components/Header";
 import ImageBannerSlider from "./components/ImageBannerSlider";
 import Separator from "./components/Separator";
+import HomepageCategoryDisplay from "./components/HomepageCategoryDisplay";
 
 function App() {
   return (
@@ -17,8 +17,9 @@ function App() {
       <div className="flex justify-center w-screen bg-white">
         <Container>
           <Header />
-          <Separator />
           <ImageBannerSlider />
+          <Separator />
+          <HomepageCategoryDisplay />
         </Container>
       </div>
     </div>

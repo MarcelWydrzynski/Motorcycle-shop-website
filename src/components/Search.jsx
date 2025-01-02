@@ -9,7 +9,7 @@ const Search = () => {
         placeholder="What are you looking for?"
         className="w-48 outline-none bg-transparent text-black"
       />
-      <img className="cursor-pointer " src={SearchIcon} alt="" />
+      <img className="cursor-pointer transition duration-150 ease-in-out  hover:scale-110" src={SearchIcon} alt="" />
     </div>
   );
 };

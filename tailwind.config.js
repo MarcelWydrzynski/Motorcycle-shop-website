@@ -6,6 +6,7 @@ export default {
       white: "#fff",
       black: "#000000",
       lightGrey: "#F5F5F5",
+      primaryRed: "#B71F3B"
     },
   },
   plugins: [require("daisyui")],

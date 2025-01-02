@@ -405,7 +405,7 @@
       "model": "Africa Twin",
       "cc": 1084,
       "horsepower": 102,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "An adventure touring bike built for long-distance travel and off-road exploration.",
       "long_description": "The Honda Africa Twin is built for riders who seek adventure and exploration. With its 1084cc engine, off-road capabilities, and long-distance comfort, it's a favorite among serious adventure riders.",
       "performance": {
@@ -519,7 +519,7 @@
       "model": "Versys 1000",
       "cc": 1043,
       "horsepower": 120,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "An adventure touring bike that balances comfort, power, and versatility.",
       "long_description": "The Kawasaki Versys 1000 is designed for adventure and touring enthusiasts. With its 1043cc engine, long-travel suspension, and comfortable ergonomics, it offers a smooth ride across a variety of terrains, from highways to backroads.",
       "performance": {
@@ -538,7 +538,7 @@
       "model": "V-Strom 650",
       "cc": 645,
       "horsepower": 71,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "A versatile and capable adventure bike with excellent value for money.",
       "long_description": "The Suzuki V-Strom 650 is a mid-size adventure bike that offers a perfect balance between performance and practicality. Its 645cc V-twin engine delivers enough power for highway cruising and off-road excursions.",
       "performance": {
@@ -557,7 +557,7 @@
       "model": "R1250GS",
       "cc": 1254,
       "horsepower": 136,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "An all-terrain adventure bike built for ultimate touring and exploration.",
       "long_description": "The BMW R1250GS is a legendary adventure bike known for its versatility and ruggedness. With its 1254cc boxer engine, advanced suspension, and adaptive riding modes, it's the go-to motorcycle for serious adventure riders.",
       "performance": {
@@ -576,7 +576,7 @@
       "model": "Tiger 900",
       "cc": 888,
       "horsepower": 94,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "A multi-purpose adventure bike designed for long tours and off-road exploration.",
       "long_description": "The Triumph Tiger 900 offers a balanced ride between on-road comfort and off-road capability. Its 888cc engine, upright ergonomics, and advanced suspension provide an excellent riding experience over a variety of terrains.",
       "performance": {
@@ -595,7 +595,7 @@
       "model": "NC750X",
       "cc": 745,
       "horsepower": 58,
-      "category": "Adventure",
+      "category": "ADV",
       "short_description": "A budget-friendly adventure bike with excellent fuel economy and comfort.",
       "long_description": "The Honda NC750X is an affordable and practical adventure bike. With its fuel-efficient engine, smooth handling, and comfortable ergonomics, it is perfect for riders who want a reliable machine for both city commutes and weekend getaways.",
       "performance": {

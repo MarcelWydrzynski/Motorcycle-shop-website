@@ -14,12 +14,12 @@ const Header = () => {
       <Search />
       <div className="flex gap-6">
         <img
-          className="cursor-pointer w-6 h-6"
+          className="cursor-pointer w-6 h-6 transition duration-150 ease-in-out  hover:scale-110"
           src={CartIcon}
           alt="Shopping cart icon"
         />
         <img
-          className="cursor-pointer w-6 h-6"
+          className="cursor-pointer w-6 h-6 transition duration-150 ease-in-out  hover:scale-110"
           src={FavoriteIcon}
           alt="Heart shaped icon"
         />
