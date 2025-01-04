@@ -9,7 +9,7 @@ const useFetchCategories = () => {
     fetch("motorcycles.json")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Could not get data from our shop. Please try again later :)");
         }
         return res.json();
       })
