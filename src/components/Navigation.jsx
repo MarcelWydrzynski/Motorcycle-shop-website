@@ -2,8 +2,8 @@ import React from "react";
 
 const Navigation = () => {
   return (
-    <div>
-      <ul className=" flex items-center gap-20 h-full text-lg text-black max-[620px]:hidden">
+    <div className="max-[620px]:hidden">
+      <ul className=" flex items-center gap-20 h-full text-lg text-black">
         <li className="cursor-pointer transition duration-150 ease-in-out  hover:scale-110">
           Home
         </li>

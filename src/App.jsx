@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TopHeader from "./components/TopHeader";
 import Container from "./components/Container";
 import Header from "./components/Header";
@@ -11,6 +10,7 @@ import HomepageBanner from "./components/HomepageBanner";
 
 function App() {
   fetchMotorcycles();
+
   return (
     <div className="flex flex-col w-full overflow-hidden">
       <div className="flex justify-center w-screen bg-black">
@@ -27,7 +27,9 @@ function App() {
           <HomepageCategoryDisplay />
           <Separator />
           <HomepageProductsDisplay />
+          <Separator />
           <HomepageBanner />
+          <Separator />
         </Container>
       </div>
     </div>

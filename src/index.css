@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #494949;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@font-face {
+  font-family: "Alumni Sans Pinstripe";
+  src: url("/assets/fonts/Alumni-Sans-Pinstripe.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
