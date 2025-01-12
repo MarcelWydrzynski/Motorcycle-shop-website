@@ -11,6 +11,15 @@ const ProductCard = ({ motorcycle }) => {
       </div>
       <div className="flex flex-col justify-between align-middle text-black px-4 gap-y-2">
         <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
+        <div>
+          <ul className="flex w-full justify-center gap-4">
+            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.horsepower}hp</li>
+            <li>|</li>
+            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.cc == 0 ? "Electric" : motorcycle.cc}cc</li>
+            <li>|</li>
+            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.performance.weight}</li>
+          </ul>
+        </div>
         <span className="text-sm text-grey group-hover:text-black">
           {motorcycle.short_description}
         </span>

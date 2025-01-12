@@ -26,10 +26,11 @@ function App() {
           <Separator />
           <HomepageCategoryDisplay />
           <Separator />
-          <HomepageProductsDisplay />
+          <HomepageProductsDisplay productNumber={4} title={'Best selling motorcycles'} subtitle={"This month"}/>
           <Separator />
           <HomepageBanner />
           <Separator />
+          <HomepageProductsDisplay productNumber={6} title={'Explore our products'} subtitle={"Our products"}/>
         </Container>
       </div>
     </div>
