@@ -7,6 +7,7 @@ import HomepageCategoryDisplay from "./components/HomepageCategoryDisplay";
 import fetchMotorcycles from "./hooks/useFetchMotorcycles";
 import HomepageProductsDisplay from "./components/HomepageProductsDisplay";
 import HomepageBanner from "./components/HomepageBanner";
+import ServiceIcons from "./components/ServiceIcons";
 
 function App() {
   fetchMotorcycles();
@@ -26,11 +27,21 @@ function App() {
           <Separator />
           <HomepageCategoryDisplay />
           <Separator />
-          <HomepageProductsDisplay productNumber={4} title={'Best selling motorcycles'} subtitle={"This month"}/>
+          <HomepageProductsDisplay
+            productNumber={4}
+            title={"Best selling motorcycles"}
+            subtitle={"This month"}
+          />
           <Separator />
           <HomepageBanner />
           <Separator />
-          <HomepageProductsDisplay productNumber={6} title={'Explore our products'} subtitle={"Our products"}/>
+          <HomepageProductsDisplay
+            productNumber={6}
+            title={"Explore our products"}
+            subtitle={"Our products"}
+          />
+          <Separator />
+          <ServiceIcons />
         </Container>
       </div>
     </div>
