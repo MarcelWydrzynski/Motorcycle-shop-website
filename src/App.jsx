@@ -8,12 +8,14 @@ import fetchMotorcycles from "./hooks/useFetchMotorcycles";
 import HomepageProductsDisplay from "./components/HomepageProductsDisplay";
 import HomepageBanner from "./components/HomepageBanner";
 import ServiceIcons from "./components/ServiceIcons";
+import FooterComponent from "./components/FooterComponent";
+import FullWidthContainer from "./components/FullWidthContainer";
 
 function App() {
   fetchMotorcycles();
 
   return (
-    <div className="flex flex-col w-full overflow-hidden">
+    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
       <div className="flex justify-center w-screen bg-black">
         <Container>
           <TopHeader />
@@ -42,8 +44,12 @@ function App() {
           />
           <Separator />
           <ServiceIcons />
+          <Separator />
         </Container>
       </div>
+      <FullWidthContainer>
+        <FooterComponent />
+      </FullWidthContainer>
     </div>
   );
 }
