@@ -3,10 +3,19 @@ import { Carousel } from "flowbite-react";
 import Title from "./Title";
 import SubTitle from "./SubTitle";
 import ProductCard from "./ProductCard";
-import useFetchRandomMotorcycle from "../hooks/useFetchRandomMotorcycles";
+import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
 
 const HomepageProductDisplay = ({ productNumber, title, subtitle }) => {
-  const { randomMotorcycles, error, loading } = useFetchRandomMotorcycle(productNumber);
+  const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(productNumber);
+
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="w-full flex flex-col gap-y-4">

@@ -1,6 +1,7 @@
 import React from "react";
 
 const ProductCard = ({ motorcycle }) => {
+
   return (
     <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey">
       <div>
@@ -13,11 +14,17 @@ const ProductCard = ({ motorcycle }) => {
         <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
         <div>
           <ul className="flex w-full justify-center gap-4">
-            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.horsepower}hp</li>
+            <li className="font-bold text-primaryRed group-hover:text-black">
+              {motorcycle.horsepower}hp
+            </li>
             <li>|</li>
-            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.cc == 0 ? "Electric" : motorcycle.cc}cc</li>
+            <li className="font-bold text-primaryRed group-hover:text-black">
+              {motorcycle.cc == 0 ? "Electric" : motorcycle.cc}cc
+            </li>
             <li>|</li>
-            <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.performance.weight}</li>
+            <li className="font-bold text-primaryRed group-hover:text-black">
+              {motorcycle.performance.weight}
+            </li>
           </ul>
         </div>
         <span className="text-sm text-grey group-hover:text-black">

@@ -2,7 +2,7 @@ import React from "react";
 import SubTitle from "./SubTitle";
 import Title from "./Title";
 import CategoryCard from "./CategoryCard";
-import useFetchCategories from "../hooks/useFetchCategories";
+import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 
 const categoryImages = {
   ADV: "/assets/Icons/Motorycycle categories/ADV.png",
@@ -15,7 +15,10 @@ const categoryImages = {
 };
 
 const HomepageCategoryDisplay = () => {
-  const { categories, error, loading } = useFetchCategories();
+  const [,, categories, error, loading] =
+    useFetchMotorcycles();
+
+  console.log(categories);
 
   return (
     <div className="w-full flex flex-col gap-y-4">
@@ -28,15 +31,16 @@ const HomepageCategoryDisplay = () => {
         {error && (
           <p className="text-lg font-semibold text-red-500">Error: {error}</p>
         )}
-        {!loading &&
-          !error &&
-          categories.map((category) => (
-            <CategoryCard
-              key={category}
-              img={categoryImages[category]}
-              text={category}
-            />
-          ))}
+        {categories.length === 0 && !loading && !error && (
+          <p className="text-lg font-semibold">No categories available.</p>
+        )}
+        {categories.map((category) => (
+          <CategoryCard
+            key={category}
+            img={categoryImages[category]}
+            text={category}
+          />
+        ))}
       </div>
     </div>
   );

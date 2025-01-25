@@ -17,13 +17,12 @@ const useFetchRandomMotorcycles = (count) => {
       })
       .then((res) => {
         const motorcycles = res.motorcycles || [];
-          const shuffled = motorcycles.sort(() => 0.5 - Math.random());
-          const randomSelection = shuffled.slice(0, count);
-          setRandomMotorcycles(randomSelection);
-        
+        const shuffled = motorcycles.sort(() => 0.5 - Math.random());
+        const randomSelection = shuffled.slice(0, count);
+        setRandomMotorcycles(randomSelection);
+        setLoading(false)
       })
       .catch((err) => {
-
         setError(err.message);
         setLoading(false);
       });
