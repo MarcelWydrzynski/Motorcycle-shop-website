@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import ImageBannerSlider from "../components/ImageBannerSlider";
 import Separator from "../components/Separator";
 import HomepageCategoryDisplay from "../components/HomepageCategoryDisplay";
-import HomepageProductsDisplay from "../components/HomepageProductsDisplay";
+import ProductsShowcase from "../components/ProductsShowcase";
 import HomepageBanner from "../components/HomepageBanner";
 import ServiceIcons from "../components/ServiceIcons";
 import FooterComponent from "../components/FooterComponent";
@@ -21,13 +21,12 @@ const HomePage = () => {
       </div>
       <div className="flex justify-center w-screen bg-white">
         <Container>
-          <TopHeader />
           <Header />
           <ImageBannerSlider />
           <Separator />
           <HomepageCategoryDisplay />
           <Separator />
-          <HomepageProductsDisplay
+          <ProductsShowcase
             productNumber={4}
             title={"Best selling motorcycles"}
             subtitle={"This month"}
@@ -35,7 +34,7 @@ const HomePage = () => {
           <Separator />
           <HomepageBanner />
           <Separator />
-          <HomepageProductsDisplay
+          <ProductsShowcase
             productNumber={6}
             title={"Explore our products"}
             subtitle={"Our products"}

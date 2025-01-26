@@ -5,7 +5,7 @@ import SubTitle from "./SubTitle";
 import ProductCard from "./ProductCard";
 import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
 
-const HomepageProductDisplay = ({ productNumber, title, subtitle }) => {
+const ProductsShowcase = ({ productNumber, title, subtitle }) => {
   const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(productNumber);
 
 
@@ -41,4 +41,4 @@ const HomepageProductDisplay = ({ productNumber, title, subtitle }) => {
   );
 };
 
-export default HomepageProductDisplay;
+export default ProductsShowcase;

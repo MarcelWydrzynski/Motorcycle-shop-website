@@ -18,8 +18,6 @@ const HomepageCategoryDisplay = () => {
   const [,, categories, error, loading] =
     useFetchMotorcycles();
 
-  console.log(categories);
-
   return (
     <div className="w-full flex flex-col gap-y-4">
       <SubTitle text={"Categories"} />
