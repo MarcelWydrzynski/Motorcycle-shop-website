@@ -1,37 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchFilter from "./SearchFilter";
-import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 import { Button } from "flowbite-react";
+import useFetchMotorcycleBrands from "../hooks/useFetchMotorcycleBrands";
+import useFetchMotorcycleCategories from "../hooks/useFetchMotorcycleCategories";
+import MobileFilters from "./MobileFilters";
 
 const Filters = () => {
-  const [motorcycles, motorcycleBrands, categories, error, loading] =
-    useFetchMotorcycles();
+  const { motorcycleBrands } = useFetchMotorcycleBrands();
+  const { motorcycleCategories } = useFetchMotorcycleCategories();
 
   return (
-    <div className="self-start flex gap-x-8 flex-wrap gap-y-2 justify-start w-full max-[570px]:justify-center">
-      <SearchFilter text={"Select your Category"} options={categories} />
-      <SearchFilter text={"Select your brand"} options={motorcycleBrands} />
-      <SearchFilter
-        text={"Select your price"}
-        options={[
-          "Under $10,000",
-          "Between $10,000 & $20,000",
-          "Above $20,000",
-        ]}
-      />
-      <div className="ml-auto flex gap-2 max-[570px]:w-full max-[570px]:justify-center">
+    <div className="flex justify-between items-end w-full">
+      <MobileFilters />
+      <div className="self-start flex gap-x-8 flex-wrap gap-y-2 justify-start max-[1000px]:hidden w-2/3">
+        <SearchFilter
+          text={"Select your Category"}
+          options={motorcycleCategories}
+        />
+        <SearchFilter text={"Select your brand"} options={motorcycleBrands} />
+        <SearchFilter
+          text={"Select your price"}
+          options={[
+            "Under $10,000",
+            "Between $10,000 & $20,000",
+            "Above $20,000",
+          ]}
+        />
         <Button
           color="light"
           className="focus:outline-none focus:ring-0 active:scale-110 transition-transform"
         >
           Filter
         </Button>
-        <Button
-          color="light"
-          className="focus:outline-none focus:ring-0 active:scale-110 transition-transform "
-        >
-          Sort by
-        </Button>
+      </div>
+      <div className="w">
+        <SearchFilter
+          text={"Sort motorcycles by"}
+          options={[
+            "Price going down",
+            "Price goinng down",
+            "Fastest top speed",
+            "lowest weight",
+          ]}
+        />
       </div>
     </div>
   );
