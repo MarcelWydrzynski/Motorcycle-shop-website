@@ -5,7 +5,7 @@ import useFetchMotorcycleBrands from "../hooks/useFetchMotorcycleBrands";
 import useFetchMotorcycleCategories from "../hooks/useFetchMotorcycleCategories";
 import MobileFilters from "./MobileFilters";
 
-const Filters = () => {
+const Filters = ({ setCategory, setBrand, setPrice, filterList }) => {
   const { motorcycleBrands } = useFetchMotorcycleBrands();
   const { motorcycleCategories } = useFetchMotorcycleCategories();
 
@@ -16,8 +16,13 @@ const Filters = () => {
         <SearchFilter
           text={"Select your Category"}
           options={motorcycleCategories}
+          stateSetter={setCategory}
         />
-        <SearchFilter text={"Select your brand"} options={motorcycleBrands} />
+        <SearchFilter
+          text={"Select your brand"}
+          options={motorcycleBrands}
+          stateSetter={setBrand}
+        />
         <SearchFilter
           text={"Select your price"}
           options={[
@@ -25,10 +30,14 @@ const Filters = () => {
             "Between $10,000 & $20,000",
             "Above $20,000",
           ]}
+          stateSetter={setPrice}
         />
         <Button
           color="light"
           className="focus:outline-none focus:ring-0 active:scale-110 transition-transform"
+          onClick={() => {
+            filterList();
+          }}
         >
           Filter
         </Button>

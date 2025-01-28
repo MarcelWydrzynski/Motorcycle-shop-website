@@ -1,7 +1,10 @@
 import React from "react";
 import { Label, Select } from "flowbite-react";
 
-const SearchFilter = ({ text, options }) => {
+const SearchFilter = ({ text, options, stateSetter }) => {
+  const handleChange = (event) => {
+    stateSetter(event.target.value);
+  };
   return (
     <div className="flex gap-2 items-center max-[500px]:flex-col">
       <div>
@@ -9,9 +12,11 @@ const SearchFilter = ({ text, options }) => {
       </div>
       <div>
         {" "}
-        <Select id="brands" required>
+        <Select onChange={handleChange} required>
           {options.map((option) => (
-            <option>{option}</option>
+            <option key={option} value={option}>
+              {option}
+            </option>
           ))}
         </Select>
       </div>

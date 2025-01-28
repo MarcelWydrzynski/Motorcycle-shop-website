@@ -14,11 +14,11 @@ const MobileFilters = () => {
       <Button
         onClick={() => setOpenModal(true)}
         color="light"
-        className="focus:outline-none focus:ring-0 active:scale-110 transition-transform"
+        className="focus:outline-none focus:ring-0 active:scale-110 transition-transform "
       >
         Show filters
       </Button>
-      <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+      <Modal dismissible show={openModal} onClose={() => setOpenModal(false)} >
         <Modal.Header>Enter your filters</Modal.Header>
         <Modal.Body>
           <div className="self-start flex gap-x-8 flex-wrap gap-y-2 justify-center w-full">

@@ -1,12 +1,7 @@
 import React from "react";
-import { Carousel } from "flowbite-react";
 import ProductPageProductCard from "./ProductPageProductCard";
-import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
 
-const ProductPageProductsDisplay = ({ productNumber, title, subtitle }) => {
-  const { randomMotorcycles, error, loading } =
-    useFetchRandomMotorcycles(productNumber);
-
+const ProductPageProductsDisplay = ({ motorcycles, error, loading }) => {
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -18,7 +13,7 @@ const ProductPageProductsDisplay = ({ productNumber, title, subtitle }) => {
   return (
     <div className="w-full flex flex-col gap-y-4">
       <div className="flex gap-8 py-8 flex-wrap justify-center">
-        {randomMotorcycles.map((motorcycle) => (
+        {motorcycles.map((motorcycle) => (
           <ProductPageProductCard key={motorcycle.id} motorcycle={motorcycle} />
         ))}
       </div>
