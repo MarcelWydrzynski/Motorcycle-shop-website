@@ -18,7 +18,7 @@ const useFetchMotorcycles = () => {
       })
       .then((data) => {
         setMotorcycles(data.motorcycles || []);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         setError(err.message);
@@ -28,6 +28,5 @@ const useFetchMotorcycles = () => {
 
   return { motorcycles, error, loading };
 };
-
 
 export default useFetchMotorcycles;

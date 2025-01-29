@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopHeader from "../components/TopHeader";
 import Container from "../components/Container";
 import Header from "../components/Header";
@@ -13,21 +13,63 @@ import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 
 const AllProductsPage = () => {
   const { motorcycles, error, loading } = useFetchMotorcycles();
-  const defaultProductsList = motorcycles;
-  const [filteredMotorcycles, setFilteredMotorcycles] = useState(motorcycles);
+  const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("None Selected");
+  const [selectedBrand, setSelectedBrand] = useState("None Selected");
+  const [selectedPrice, setSelectedPrice] = useState("None Selected");
 
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("");
-  const [selectedPrice, setSelectedPrice] = useState("");
+  useEffect(() => {
+    setFilteredMotorcycles(motorcycles);
+  }, [motorcycles]);
+
+  useEffect(() => {
+    filterList();
+  }, [selectedCategory, selectedBrand, selectedPrice, motorcycles]);
 
   const filterList = () => {
-    const filtered = motorcycles.filter((motorcycle) =>
-      selectedCategory ? motorcycle.category === selectedCategory : true
-    );
+    if (motorcycles.length === 0) return;
+
+    let filtered = motorcycles;
+
+    if (selectedCategory && selectedCategory !== "None Selected") {
+      filtered = filtered.filter(
+        (motorcycle) => motorcycle.category === selectedCategory
+      );
+    }
+
+    if (selectedBrand && selectedBrand !== "None Selected") {
+      filtered = filtered.filter(
+        (motorcycle) => motorcycle.brand === selectedBrand
+      );
+    }
+
+    if (selectedPrice && selectedPrice !== "None Selected") {
+      filtered = filtered.filter((motorcycle) => {
+        const price = parseFloat(motorcycle.price.replace(/[$,]/g, ""));
+        if (selectedPrice === "Under $10,000") return price < 10000;
+        if (selectedPrice === "Between $10,000 & $20,000")
+          return price >= 10000 && price <= 20000;
+        if (selectedPrice === "Above $20,000") return price > 20000;
+        return true;
+      });
+    }
 
     setFilteredMotorcycles(filtered);
-    console.log("Filtered Motorcycles by Category:", filtered);
   };
+
+  const resetFilters = () => {
+    setSelectedBrand("None Selected");
+    setSelectedCategory("None Selected");
+    setSelectedPrice("None Selected");
+
+    if (motorcycles.length > 0) {
+      setFilteredMotorcycles(motorcycles);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
@@ -41,13 +83,16 @@ const AllProductsPage = () => {
           <Header />
           <Breadcrumbs />
           <Filters
+            selectedCategory={selectedCategory}
             setCategory={setSelectedCategory}
+            selectedBrand={selectedBrand}
             setBrand={setSelectedBrand}
+            selectedPrice={selectedPrice}
             setPrice={setSelectedPrice}
-            filterList={filterList}
+            resetFilters={resetFilters}
           />
           <ProductPageProductsDisplay
-            motorcycles={defaultProductsList} // Render filtered list
+            motorcycles={filteredMotorcycles}
             error={error}
             loading={loading}
           />

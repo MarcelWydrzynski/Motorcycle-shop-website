@@ -9,6 +9,7 @@ const useFetchMotorcycleBrands = () => {
     const uniqueCategories = [
       ...new Set(motorcycles.map((motorcycle) => motorcycle.category)),
     ];
+    uniqueCategories.unshift("None selected");
     setMotorcycleCategories(uniqueCategories);
   }, [motorcycles]);
 
