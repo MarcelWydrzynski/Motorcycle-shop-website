@@ -55,6 +55,7 @@ const AllProductsPage = () => {
     }
 
     setFilteredMotorcycles(filtered);
+    //I have no idea how to code this :(
   };
 
   const resetFilters = () => {
