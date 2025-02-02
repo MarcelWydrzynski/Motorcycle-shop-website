@@ -1,7 +1,7 @@
 import React from "react";
 import { Label, Select } from "flowbite-react";
 
-const SearchFilter = ({ text, options, state, stateSetter }) => {
+const SearchFilter = ({ text, options, state, stateSetter, filterList }) => {
   const handleChange = (event) => {
     stateSetter(event.target.value);
   };

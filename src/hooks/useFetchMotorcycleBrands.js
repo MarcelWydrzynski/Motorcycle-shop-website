@@ -9,7 +9,7 @@ const useFetchMotorcycleBrands = () => {
     const uniqueBrands = [
       ...new Set(motorcycles.map((motorcycle) => motorcycle.brand)),
     ];
-    uniqueBrands.unshift("None selected")
+    uniqueBrands.unshift("None Selected");
     setMotorcycleBrands(uniqueBrands);
   }, [motorcycles]);
 

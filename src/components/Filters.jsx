@@ -18,11 +18,15 @@ const Filters = ({
   const { motorcycleCategories } = useFetchMotorcycleCategories();
 
   return (
-    <div className="flex justify-between items-end w-full">
+    <div className="flex justify-between items-center w-full">
       <MobileFilters
         setCategory={setCategory}
+        selectedCategory={selectedCategory}
         setBrand={setBrand}
+        selectedBrand={selectedBrand}
         setPrice={setPrice}
+        selectedPrice={selectedPrice}
+        resetFilters={resetFilters}
       />
       <div className="self-start flex gap-x-8 flex-wrap gap-y-2 justify-start max-[1000px]:hidden w-2/3">
         <SearchFilter
@@ -40,7 +44,7 @@ const Filters = ({
         <SearchFilter
           text={"Select your price"}
           options={[
-            "None selected",
+            "None Selected",
             "Under $10,000",
             "Between $10,000 & $20,000",
             "Above $20,000",

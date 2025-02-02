@@ -14,63 +14,62 @@ import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 const AllProductsPage = () => {
   const { motorcycles, error, loading } = useFetchMotorcycles();
   const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
+  const [unfilterdList, setUnfilterdList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("None Selected");
   const [selectedBrand, setSelectedBrand] = useState("None Selected");
   const [selectedPrice, setSelectedPrice] = useState("None Selected");
 
   useEffect(() => {
-    setFilteredMotorcycles(motorcycles);
+    if (motorcycles.length > 0) {
+      setUnfilterdList(motorcycles);
+    }
   }, [motorcycles]);
 
   useEffect(() => {
-    filterList();
-  }, [selectedCategory, selectedBrand, selectedPrice, motorcycles]);
+    if (unfilterdList.length > 0) {
+      filterList();
+    }
+  }, [selectedCategory, selectedBrand, selectedPrice, unfilterdList]);
 
   const filterList = () => {
-    if (motorcycles.length === 0) return;
+    let filtered = unfilterdList;
 
-    let filtered = motorcycles;
+    console.log(filtered);
 
-    if (selectedCategory && selectedCategory !== "None Selected") {
-      filtered = filtered.filter(
-        (motorcycle) => motorcycle.category === selectedCategory
-      );
+    // Apply Category filter if it's not "None Selected"
+    if (selectedCategory !== "None Selected") {
+      filtered = filtered.filter((moto) => moto.category === selectedCategory);
     }
 
-    if (selectedBrand && selectedBrand !== "None Selected") {
-      filtered = filtered.filter(
-        (motorcycle) => motorcycle.brand === selectedBrand
-      );
+    // Apply Brand filter if it's not "None Selected"
+    if (selectedBrand !== "None Selected") {
+      filtered = filtered.filter((moto) => moto.brand === selectedBrand);
     }
 
-    if (selectedPrice && selectedPrice !== "None Selected") {
-      filtered = filtered.filter((motorcycle) => {
-        const price = parseFloat(motorcycle.price.replace(/[$,]/g, ""));
-        if (selectedPrice === "Under $10,000") return price < 10000;
+    // Apply Price filter if it's not "None Selected"
+    if (selectedPrice !== "None Selected") {
+      filtered = filtered.filter((moto) => {
+        const cleanPrice = parseInt(moto.price.replace(/[$,]/g, ""), 10);
+
+        if (selectedPrice === "Under $10,000") return cleanPrice < 10000;
         if (selectedPrice === "Between $10,000 & $20,000")
-          return price >= 10000 && price <= 20000;
-        if (selectedPrice === "Above $20,000") return price > 20000;
+          return cleanPrice >= 10000 && cleanPrice <= 20000;
+        if (selectedPrice === "Above $20,000") return cleanPrice > 20000;
+
         return true;
       });
     }
 
+    console.log("Filtered list:", filtered);
     setFilteredMotorcycles(filtered);
-    //I have no idea how to code this :(
   };
 
   const resetFilters = () => {
     setSelectedBrand("None Selected");
     setSelectedCategory("None Selected");
     setSelectedPrice("None Selected");
-
-    if (motorcycles.length > 0) {
-      setFilteredMotorcycles(motorcycles);
-    }
+    setFilteredMotorcycles(unfilterdList);
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
@@ -92,11 +91,16 @@ const AllProductsPage = () => {
             setPrice={setSelectedPrice}
             resetFilters={resetFilters}
           />
-          <ProductPageProductsDisplay
-            motorcycles={filteredMotorcycles}
-            error={error}
-            loading={loading}
-          />
+          {loading ? (
+            <p>loading</p>
+          ) : (
+            <ProductPageProductsDisplay
+              motorcycles={filteredMotorcycles}
+              error={error}
+              loading={loading}
+            />
+          )}
+
           <Separator />
           <ServiceIcons />
         </Container>
