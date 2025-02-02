@@ -13,6 +13,8 @@ const Filters = ({
   setPrice,
   selectedPrice,
   resetFilters,
+  sortingFilter,
+  setSortingFilter,
 }) => {
   const { motorcycleBrands } = useFetchMotorcycleBrands();
   const { motorcycleCategories } = useFetchMotorcycleCategories();
@@ -60,15 +62,18 @@ const Filters = ({
           Reset Filters
         </Button>
       </div>
-      <div className="w">
+      <div>
         <SearchFilter
           text={"Sort motorcycles by"}
           options={[
+            "None Selected",
             "Price going down",
-            "Price goinng down",
+            "Price going up",
             "Fastest top speed",
-            "lowest weight",
+            "Lowest weight",
           ]}
+          state={sortingFilter}
+          stateSetter={setSortingFilter}
         />
       </div>
     </div>
