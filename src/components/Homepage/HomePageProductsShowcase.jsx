@@ -1,9 +1,9 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
-import Title from "./Title";
-import SubTitle from "./SubTitle";
-import ProductCard from "./ProductCard";
-import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
+import Title from "../Title";
+import SubTitle from "../SubTitle";
+import ProductCard from "../ProductCard";
+import useFetchRandomMotorcycles from "../../hooks/useFetchRandomMotorcycles";
 
 const ProductsShowcase = ({ productNumber, title, subtitle }) => {
   const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(productNumber);

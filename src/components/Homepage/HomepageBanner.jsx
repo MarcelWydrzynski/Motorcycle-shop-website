@@ -1,4 +1,4 @@
-import Banner from "../../public/assets/Icons/Banners/Honda-banner.jpg";
+import Banner from "../../../public/assets/Icons/Banners/Honda-banner.jpg";
 
 const HomepageBanner = () => {
   return (

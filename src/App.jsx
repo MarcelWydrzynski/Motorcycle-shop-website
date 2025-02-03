@@ -1,8 +1,9 @@
 import HomePage from "./Pages/HomePage";
 import AllProductsPage from "./Pages/AllProductsPage";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
-  return <AllProductsPage />
+  return <ProductPage />;
 }
 
 export default App;

@@ -1,8 +1,8 @@
 import React from "react";
-import SubTitle from "./SubTitle";
-import Title from "./Title";
+import SubTitle from "../SubTitle";
+import Title from "../Title";
 import CategoryCard from "./CategoryCard";
-import useFetchMotorcycleCategories from "../hooks/useFetchMotorcycleCategories";
+import useFetchMotorcycleCategories from "../../hooks/useFetchMotorcycleCategories";
 
 const categoryImages = {
   ADV: "/assets/Icons/Motorycycle categories/ADV.png",

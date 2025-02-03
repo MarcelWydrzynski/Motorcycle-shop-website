@@ -6,7 +6,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import Filters from "../components/Filters";
 import FooterComponent from "../components/FooterComponent";
 import FullWidthContainer from "../components/FullWidthContainer";
-import ProductPageProductsDisplay from "../components/ProductPageProductsDisplay";
+import ProductPageProductsDisplay from "../components/AllProductspage/ProductPageProductsDisplay";
 import Separator from "../components/Separator";
 import ServiceIcons from "../components/ServiceIcons";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
