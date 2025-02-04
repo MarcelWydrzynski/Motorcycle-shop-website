@@ -1,4 +1,5 @@
 import React from "react";
+import ServiceInfo from "./serviceInfo";
 
 const ProductDescription = ({ motorcycle }) => {
   return (
@@ -11,7 +12,9 @@ const ProductDescription = ({ motorcycle }) => {
       <div className="flex flex-wrap justify-start gap-x-4">
         <p className="text-primaryRed font-bold">{motorcycle.horsepower} HP</p>
         <p className="text-primaryRed font-bold">{motorcycle.cc} CC</p>
-        <p className="text-primaryRed font-bold">{motorcycle.performance["weight"]}</p>
+        <p className="text-primaryRed font-bold">
+          {motorcycle.performance["weight"]}
+        </p>
       </div>
       <div>
         <ul className="flex flex-wrap gap-x-4">
@@ -38,6 +41,7 @@ const ProductDescription = ({ motorcycle }) => {
       <button className="font-semibold bg-primaryRed text-white border-none py-2 px-3 rounded w-36">
         Buy Motorcycle!
       </button>
+      <ServiceInfo />
     </div>
   );
 };
