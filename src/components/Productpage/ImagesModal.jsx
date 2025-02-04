@@ -10,15 +10,15 @@ const ImagesModal = ({ motorcycleImage, onClose }) => {
   return (
     <div
       id="modal-background"
-      className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md"
+      className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md "
       onClick={handleBackgroundClick}
     >
-      <div className="relative bg-white p-4 rounded-lg shadow-lg max-w-[80%] max-h-[80%]">
+      <div className="relative">
         <button
-          className="absolute top-2 right-2 text-xl font-bold text-gray-800 hover:text-red-500"
+          className="absolute top-2 right-2 text-5xl font-bold text-gray-800 hover:text-red-500 max-w-[80%] max-h-[80%]"
           onClick={onClose}
         >
-          Close X
+          X
         </button>
         <img
           src={motorcycleImage}
