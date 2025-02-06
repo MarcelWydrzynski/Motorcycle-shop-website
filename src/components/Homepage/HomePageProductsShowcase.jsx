@@ -6,8 +6,8 @@ import ProductCard from "../ProductCard";
 import useFetchRandomMotorcycles from "../../hooks/useFetchRandomMotorcycles";
 
 const ProductsShowcase = ({ productNumber, title, subtitle }) => {
-  const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(productNumber);
-
+  const { randomMotorcycles, error, loading } =
+    useFetchRandomMotorcycles(productNumber);
 
   if (loading) {
     return <div>Loading...</div>;
