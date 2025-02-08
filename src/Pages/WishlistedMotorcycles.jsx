@@ -3,124 +3,85 @@ import TopHeader from "../components/TopHeader";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Breadcrumbs from "../components/Breadcrumbs";
-import Filters from "../components/Filters";
 import FooterComponent from "../components/FooterComponent";
 import FullWidthContainer from "../components/FullWidthContainer";
-import ProductPageProductsDisplay from "../components/AllProductspage/ProductPageProductsDisplay";
-import Separator from "../components/Separator";
-import ServiceIcons from "../components/ServiceIcons";
-import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
+import ProductCard from "../components/Wishlistpage/productCard";
+import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
+import { Alert } from "flowbite-react";
 
-const AllProductsPage = () => {
-  const { motorcycles, error, loading } = useFetchMotorcycles();
-  const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
-  const [unfilterdList, setUnfilterdList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("None Selected");
-  const [selectedBrand, setSelectedBrand] = useState("None Selected");
-  const [selectedPrice, setSelectedPrice] = useState("None Selected");
-  const [sortingFilter, setSortingFilter] = useState("None Selected");
+const WishlistedMotorcycles = () => {
+  const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(4);
+  const [motorcycles, setMotorcycles] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    if (motorcycles.length > 0) {
-      setUnfilterdList(motorcycles);
+    if (randomMotorcycles && randomMotorcycles.length > 0) {
+      setMotorcycles(randomMotorcycles);
     }
-  }, [motorcycles]);
+  }, [randomMotorcycles]);
 
-  useEffect(() => {
-    if (motorcycles.length > 0) {
-      setUnfilterdList(motorcycles);
-    }
-  }, [motorcycles]);
-
-  useEffect(() => {
-    const filterList = () => {
-      let filtered = [...unfilterdList];
-
-      if (selectedCategory !== "None Selected") {
-        filtered = filtered.filter(
-          (moto) => moto.category === selectedCategory
-        );
-      }
-      if (selectedBrand !== "None Selected") {
-        filtered = filtered.filter((moto) => moto.brand === selectedBrand);
-      }
-      if (selectedPrice !== "None Selected") {
-        filtered = filtered.filter((moto) => {
-          const cleanPrice = parseInt(moto.price.replace(/[$,]/g, ""), 10);
-          switch (selectedPrice) {
-            case "Under $10,000":
-              return cleanPrice < 10000;
-            case "Between $10,000 & $20,000":
-              return cleanPrice >= 10000 && cleanPrice <= 20000;
-            case "Above $20,000":
-              return cleanPrice > 20000;
-            default:
-              return true;
-          }
-        });
-      }
-
-      if (sortingFilter === "Price going up") {
-        filtered = filtered.sort((a, b) => {
-          const priceA = parseInt(a.price.replace(/[$,]/g, ""), 10);
-          const priceB = parseInt(b.price.replace(/[$,]/g, ""), 10);
-          return priceA - priceB;
-        });
-      } else if (sortingFilter === "Price going down") {
-        filtered = filtered.sort((a, b) => {
-          const priceA = parseInt(a.price.replace(/[$,]/g, ""), 10);
-          const priceB = parseInt(b.price.replace(/[$,]/g, ""), 10);
-          return priceB - priceA;
-        });
-      } else if (sortingFilter === "Fastest top speed") {
-        filtered = filtered.sort(
-          (a, b) => b.performance.topSpeed - a.performance.topSpeed
-        );
-      } else if (sortingFilter === "Lowest weight") {
-        filtered = filtered.sort(
-          (a, b) => a.performance.weight - b.performance.weight
-        );
-      }
-
-      return filtered;
-    };
-
-    setFilteredMotorcycles(filterList());
-  }, [
-    selectedCategory,
-    selectedBrand,
-    selectedPrice,
-    sortingFilter,
-    unfilterdList,
-  ]);
-
-  const resetFilters = () => {
-    setSelectedBrand("None Selected");
-    setSelectedCategory("None Selected");
-    setSelectedPrice("None Selected");
-    setSortingFilter("None Selected");
-    setFilteredMotorcycles(unfilterdList);
+  const onDelete = (id) => {
+    setMotorcycles((prevMotorcycles) =>
+      prevMotorcycles.filter((motorcycle) => motorcycle.id !== id)
+    );
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
   };
 
+  const moveToBasket = () => {
+    alert("Moved to basket!");
+  };
+
+  if (loading) return <p>Loading motorcycles...</p>;
+  if (error) return <p>Error loading motorcycles!</p>;
+
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-      <div className="flex justify-center w-screen bg-black">
-        <Container>
-          <TopHeader />
-        </Container>
+    <>
+      {showAlert && (
+        <div className="fixed inset-x-0 top-10 flex justify-center z-50">
+          <Alert
+            color="info"
+            className="bg-primaryRed text-white px-6 py-3 rounded-lg text-center animate-fade-in-out"
+          >
+            <p className="text-md">Motorcycle deleted from wishlist!</p>
+          </Alert>
+        </div>
+      )}
+      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
+        <div className="flex justify-center w-screen bg-black">
+          <Container>
+            <TopHeader />
+          </Container>
+        </div>
+        <div className="flex justify-center w-screen bg-white">
+          <Container>
+            <Header />
+            <Breadcrumbs />
+            <div className="w-full flex flex-wrap gap-4 py-8 justify-start">
+              {motorcycles.length > 0 ? (
+                motorcycles.map((motorcycle) => (
+                  <ProductCard
+                    key={motorcycle.id}
+                    motorcycle={motorcycle}
+                    onDelete={onDelete}
+                    showAlert={showAlert}
+                    moveToBasket={moveToBasket}
+                  />
+                ))
+              ) : (
+                <p>No motorcycles in your wishlist.</p>
+              )}
+            </div>
+          </Container>
+        </div>
+        <FullWidthContainer>
+          <FooterComponent />
+        </FullWidthContainer>
       </div>
-      <div className="flex justify-center w-screen bg-white">
-        <Container>
-          <Header />
-          <Breadcrumbs />
-    
-        </Container>
-      </div>
-      <FullWidthContainer>
-        <FooterComponent />
-      </FullWidthContainer>
-    </div>
+    </>
   );
 };
 
-export default AllProductsPage;
+export default WishlistedMotorcycles;
