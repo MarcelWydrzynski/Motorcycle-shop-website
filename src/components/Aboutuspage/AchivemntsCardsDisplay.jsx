@@ -14,19 +14,19 @@ const AchivemntsCardsDisplay = () => {
         text={"Sellers active on our site"}
       />
        <AchivmentCard
-        img={moneyIcon}
-        number={"10.5"}
-        text={"Sellers active on our site"}
+        img={saleIcon}
+        number={"3"}
+        text={"Monthly Motorbike Sales"}
       />
        <AchivmentCard
-        img={moneyIcon}
-        number={"10.5"}
-        text={"Sellers active on our site"}
+        img={shopIcon}
+        number={"45"}
+        text={"Visitors each day on our site"}
       />
        <AchivmentCard
-        img={moneyIcon}
-        number={"10.5"}
-        text={"Sellers active on our site"}
+        img={bagIcon}
+        number={"34.2"}
+        text={"Annual gross sale on our site"}
       />
     </div>
   );
