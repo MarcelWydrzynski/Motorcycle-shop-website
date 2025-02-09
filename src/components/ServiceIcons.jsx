@@ -5,7 +5,7 @@ import MoneyIcon from "../../public/assets/Icons/services/MoneyBack.png";
 
 const ServiceIcons = () => {
   return (
-    <div className="w-full flex justify-center items-center mb-24">
+    <div className="w-full flex justify-center items-center">
       <ul className="flex justify-around w-full flex-wrap gap-x-4 gap-y-8">
         <li className="flex flex-col items-center p-4">
           <img src={DeliveryIcon} alt="Delivery" className="w-20 mb-2" />

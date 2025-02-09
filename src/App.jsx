@@ -4,9 +4,10 @@ import ProductPage from "./Pages/ProductPage";
 import WishlistedMotorcycles from "./Pages/WishlistedMotorcycles";
 import CartPage from "./Pages/CartPage";
 import CheckoutPage from "./Pages/CheckoutPage";
+import AboutPage from "./Pages/AboutPage";
 
 function App() {
-  return <CheckoutPage />;
+  return <AboutPage />;
 }
 
 export default App;

@@ -4,9 +4,7 @@ import sendIcon from "../../public/assets/Icons/services/send.png";
 import googleStoreIcon from "../../public/assets/Icons/services/googlestore.png";
 import appStoreIcon from "../../public/assets/Icons/services/AppStore.png";
 import {
-  BsDribbble,
   BsFacebook,
-  BsGithub,
   BsInstagram,
   BsLinkedin,
   BsTwitter,
