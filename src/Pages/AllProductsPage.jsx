@@ -10,6 +10,7 @@ import ProductPageProductsDisplay from "../components/AllProductspage/ProductPag
 import Separator from "../components/Separator";
 import ServiceIcons from "../components/ServiceIcons";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
+import { WishlistProvider } from "../context/WishlistContext";
 
 const AllProductsPage = () => {
   const { motorcycles, error, loading } = useFetchMotorcycles();
@@ -103,45 +104,47 @@ const AllProductsPage = () => {
   };
 
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-      <div className="flex justify-center w-screen bg-black">
-        <Container>
-          <TopHeader />
-        </Container>
-      </div>
-      <div className="flex justify-center w-screen bg-white">
-        <Container>
-          <Header />
-          <Breadcrumbs />
-          <Filters
-            selectedCategory={selectedCategory}
-            setCategory={setSelectedCategory}
-            selectedBrand={selectedBrand}
-            setBrand={setSelectedBrand}
-            selectedPrice={selectedPrice}
-            setPrice={setSelectedPrice}
-            resetFilters={resetFilters}
-            sortingFilter={sortingFilter}
-            setSortingFilter={setSortingFilter}
-          />
-          {loading ? (
-            <p>loading</p>
-          ) : (
-            <ProductPageProductsDisplay
-              motorcycles={filteredMotorcycles}
-              error={error}
-              loading={loading}
+    <WishlistProvider>
+      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
+        <div className="flex justify-center w-screen bg-black">
+          <Container>
+            <TopHeader />
+          </Container>
+        </div>
+        <div className="flex justify-center w-screen bg-white">
+          <Container>
+            <Header />
+            <Breadcrumbs />
+            <Filters
+              selectedCategory={selectedCategory}
+              setCategory={setSelectedCategory}
+              selectedBrand={selectedBrand}
+              setBrand={setSelectedBrand}
+              selectedPrice={selectedPrice}
+              setPrice={setSelectedPrice}
+              resetFilters={resetFilters}
+              sortingFilter={sortingFilter}
+              setSortingFilter={setSortingFilter}
             />
-          )}
+            {loading ? (
+              <p>loading</p>
+            ) : (
+              <ProductPageProductsDisplay
+                motorcycles={filteredMotorcycles}
+                error={error}
+                loading={loading}
+              />
+            )}
 
-          <Separator />
-          <ServiceIcons />
-        </Container>
+            <Separator />
+            <ServiceIcons />
+          </Container>
+        </div>
+        <FullWidthContainer>
+          <FooterComponent />
+        </FullWidthContainer>
       </div>
-      <FullWidthContainer>
-        <FooterComponent />
-      </FullWidthContainer>
-    </div>
+    </WishlistProvider>
   );
 };
 

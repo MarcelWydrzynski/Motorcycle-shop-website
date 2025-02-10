@@ -23,7 +23,7 @@ const ProductPasge = () => {
   }, [motorcycles]);
 
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center overflow-hidden">
+    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
       <div className="flex justify-center w-screen bg-black">
         <Container>
           <TopHeader />
