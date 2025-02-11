@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { WishlistContext } from "../context/WishlistContext";
 import WishlistIcon from "../../public/assets/Icons/services/Vector.png";
+import { ShopContext } from "../context/ShopContext";
 
 const ProductCard = ({ motorcycle }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
-  const { toggleWishlisted } = useContext(WishlistContext);
+  const { toggleWishlisted } = useContext(ShopContext);
 
   const onClick = () => {
     toggleWishlisted(motorcycle);

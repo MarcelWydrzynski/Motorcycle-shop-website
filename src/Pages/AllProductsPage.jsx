@@ -10,7 +10,7 @@ import ProductPageProductsDisplay from "../components/AllProductspage/ProductPag
 import Separator from "../components/Separator";
 import ServiceIcons from "../components/ServiceIcons";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
-import { WishlistProvider } from "../context/WishlistContext";
+import { ShopProvider } from "../context/ShopContext";
 
 const AllProductsPage = () => {
   const { motorcycles, error, loading } = useFetchMotorcycles();
@@ -104,7 +104,7 @@ const AllProductsPage = () => {
   };
 
   return (
-    <WishlistProvider>
+    <ShopProvider>
       <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
         <div className="flex justify-center w-screen bg-black">
           <Container>
@@ -144,7 +144,7 @@ const AllProductsPage = () => {
           <FooterComponent />
         </FullWidthContainer>
       </div>
-    </WishlistProvider>
+    </ShopProvider>
   );
 };
 

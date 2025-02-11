@@ -9,11 +9,7 @@ import ContactPage from "./Pages/ContactPage";
 import ErrorPage from "./Pages/ErrorPage";
 
 function App() {
-  return (
-  
-      <AllProductsPage />
-  
-  );
+  return <ProductPage />;
 }
 
 export default App;

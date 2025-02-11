@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import ServiceInfo from "./serviceInfo";
+import { ShopContext } from "../../context/ShopContext";
 
 const ProductDescription = ({ motorcycle }) => {
+  const { updateCart } = useContext(ShopContext);
+  const [isInCart, setIsInCart] = useState(false);
+
+  const onClick = () => {
+    updateCart(motorcycle);
+    setIsInCart(!isInCart);
+  };
   return (
     <div className="w-1/2 flex flex-col gap-y-6 max-[1000px]:w-full">
       <h2 className="text-4xl font-extrabold">
@@ -38,8 +46,11 @@ const ProductDescription = ({ motorcycle }) => {
           </li>
         </ul>
       </div>
-      <button className="font-semibold bg-primaryRed text-white border-none py-2 px-3 rounded w-36">
-        Buy Motorcycle!
+      <button
+        onClick={onClick}
+        className="font-semibold bg-primaryRed text-white border-2 duration-75 py-4 px-6 rounded w-fit hover:border-primaryRed hover:bg-white hover:text-primaryRed"
+      >
+        {isInCart ? "Remove from cart" : "Add to cart!"}
       </button>
       <ServiceInfo />
     </div>

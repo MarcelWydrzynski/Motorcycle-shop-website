@@ -10,6 +10,7 @@ import Separator from "../components/Separator";
 import ProductDisplay from "../components/Productpage/ProductDisplay";
 import HomepageProductsShowcase from "../components/Homepage/HomePageProductsShowcase";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
+import { ShopProvider } from "../context/ShopContext";
 
 const ProductPasge = () => {
   const { motorcycles, error, loading } = useFetchMotorcycles();
@@ -23,31 +24,36 @@ const ProductPasge = () => {
   }, [motorcycles]);
 
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-      <div className="flex justify-center w-screen bg-black">
-        <Container>
-          <TopHeader />
-        </Container>
+    <ShopProvider>
+      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
+        <div className="flex justify-center w-screen bg-black">
+          <Container>
+            <TopHeader />
+          </Container>
+        </div>
+        <div className="flex justify-center w-screen bg-white">
+          <Container>
+            <Header />
+            <Breadcrumbs />
+            {motorcycle ? (
+              <ProductDisplay motorcycle={motorcycle} />
+            ) : (
+              <p>Loading...</p>
+            )}
+            <Separator />
+            <HomepageProductsShowcase
+              productNumber={4}
+              subtitle={"Check out our diffrent motorcycles"}
+            />
+            <Separator />
+            <ServiceIcons />
+          </Container>
+        </div>
+        <FullWidthContainer>
+          <FooterComponent />
+        </FullWidthContainer>
       </div>
-      <div className="flex justify-center w-screen bg-white">
-        <Container>
-          <Header />
-          <Breadcrumbs />
-          {motorcycle ? (
-            <ProductDisplay motorcycle={motorcycle} />
-          ) : (
-            <p>Loading...</p>
-          )}
-          <Separator />
-          <HomepageProductsShowcase productNumber={4} subtitle={"Check out our diffrent motorcycles"}/>
-          <Separator />
-          <ServiceIcons />
-        </Container>
-      </div>
-      <FullWidthContainer>
-        <FooterComponent />
-      </FullWidthContainer>
-    </div>
+    </ShopProvider>
   );
 };
 

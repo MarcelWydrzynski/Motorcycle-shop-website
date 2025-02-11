@@ -5,11 +5,11 @@ import Search from "./Search";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
 import Logo from "./Logo";
-import { WishlistContext } from "../context/WishlistContext.jsx";
+import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
-  const { wishlist } = useContext(WishlistContext); // ✅ Now correctly accessing context
-
+  const { cart, wishlist } = useContext(ShopContext);
+  console.log(cart, wishlist);
   return (
     <div className="flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between">
       <Logo />
@@ -23,11 +23,10 @@ const Header = () => {
             alt="Shopping cart icon"
           />
           <div className="absolute -top-5 -right-7 bg-primaryRed rounded-full py-1 px-3 text-white">
-            <p>0</p>
+            <p>{cart.length}</p>
           </div>
         </div>
 
-        {/* Wishlist Icon */}
         <div className="relative">
           <img
             className="cursor-pointer w-7 h-7 transition duration-150 ease-in-out hover:scale-110"
@@ -35,7 +34,7 @@ const Header = () => {
             alt="Heart shaped icon"
           />
           <div className="absolute -top-5 -right-7 bg-primaryRed rounded-full py-1 px-3 text-white">
-            <p>{wishlist.length}</p> {/* ✅ Now displays wishlist count */}
+            <p>{wishlist.length}</p>
           </div>
         </div>
       </div>
