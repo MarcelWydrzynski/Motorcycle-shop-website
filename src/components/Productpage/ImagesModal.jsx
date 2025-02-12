@@ -13,7 +13,7 @@ const ImagesModal = ({ motorcycleImage, onClose }) => {
       className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md "
       onClick={handleBackgroundClick}
     >
-      <div className="relative">
+      <div className="relative bg-lightGrey rounded-lg">
         <button
           className="absolute top-2 right-2 text-5xl font-bold text-gray-800 hover:text-red-500 max-w-[80%] max-h-[80%]"
           onClick={onClose}

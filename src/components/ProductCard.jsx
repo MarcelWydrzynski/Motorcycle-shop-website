@@ -1,4 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import WishlistIcon from "../../public/assets/Icons/services/Vector.png";
 import { ShopContext } from "../context/ShopContext";
 
@@ -6,7 +7,9 @@ const ProductCard = ({ motorcycle }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const { toggleWishlisted } = useContext(ShopContext);
 
-  const onClick = () => {
+  const onClick = (e) => {
+    // Prevent navigating when clicking on the wishlist button
+    e.stopPropagation();
     toggleWishlisted(motorcycle);
     setIsWishlisted(!isWishlisted);
   };
@@ -32,6 +35,7 @@ const ProductCard = ({ motorcycle }) => {
           alt={`${motorcycle.brand} ${motorcycle.model}`}
         />
       </div>
+
       <div className="flex flex-col justify-between align-middle text-black px-4 gap-y-2">
         <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
         <div>
@@ -54,13 +58,18 @@ const ProductCard = ({ motorcycle }) => {
         <span className="text-sm text-grey group-hover:text-black">
           {motorcycle.short_description}
         </span>
+
         <div className="flex justify-between w-full">
           <span className="text-xl font-bold text-primaryRed group-hover:text-black">
-            {`${motorcycle.price}`}
+            {motorcycle.price}
           </span>
-          <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
-            View motorcycle
-          </button>
+
+          {/* Wrap the button with Link */}
+          <Link to={`/products/${motorcycle.id}`}>
+            <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
+              View Motorcycle
+            </button>
+          </Link>
         </div>
       </div>
     </div>

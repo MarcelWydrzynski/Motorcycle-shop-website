@@ -32,13 +32,14 @@ const HomepageCategoryDisplay = () => {
         {motorcycleCategories.length === 0 && !loading && !error && (
           <p className="text-lg font-semibold">No categories available.</p>
         )}
-        {motorcycleCategories.map((category) => (
-          <CategoryCard
-            key={category}
-            img={categoryImages[category]}
-            text={category}
-          />
-        ))}
+        {motorcycleCategories.length > 0 &&
+          motorcycleCategories.map((category) => (
+            <CategoryCard
+              key={category}
+              img={categoryImages[category]} // Match image to the category
+              text={category}
+            />
+          ))}
       </div>
     </div>
   );

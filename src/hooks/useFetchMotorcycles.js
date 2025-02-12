@@ -2,16 +2,15 @@ import { useState, useEffect } from "react";
 
 const useFetchMotorcycles = () => {
   const [motorcycles, setMotorcycles] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("motorcycles.json")
+    fetch("/motorcycles.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(
-            "Could not get data from our shop. Please try again later :)"
+            "Could not get data from our shop. Please try again later."
           );
         }
         return res.json();

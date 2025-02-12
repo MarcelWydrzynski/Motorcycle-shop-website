@@ -38,7 +38,7 @@
         "fuelCapacity": "16.1 liters"
       },
       "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png",
-      "modalImage": "/assets/motorcycles/honda-cbr1000rr-r-fireblade-sp-sports-bikes-2022-race-track-3840x2160-6946.jpg",
+      "modalImage": "/assets/motorcycles/CBR1000RR-R Fireblade.png",
       "price": "$6,499"
     },
     {
@@ -79,6 +79,7 @@
         "fuelCapacity": "17 liters"
       },
       "image": "/assets/motorcycles/ninja h2.png",
+      "modalImage": "/assets/motorcycles/ninja h2.png",
       "price": "$29,000"
     },
     {
@@ -478,7 +479,7 @@
         "seatHeight": "825 mm",
         "fuelCapacity": "14 liters"
       },
-      "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png",
+      "image": "/assets/motorcycles/790 duke.png",
       "price": "$19,999"
     },
     {

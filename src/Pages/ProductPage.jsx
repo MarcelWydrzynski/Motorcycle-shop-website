@@ -1,60 +1,57 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 import Container from "../components/Container";
 import TopHeader from "../components/TopHeader";
 import Header from "../components/Header";
 import Breadcrumbs from "../components/Breadcrumbs";
+import ProductDisplay from "../components/Productpage/ProductDisplay";
+import FooterComponent from "../components/FooterComponent";
 import ServiceIcons from "../components/ServiceIcons";
 import FullWidthContainer from "../components/FullWidthContainer";
-import FooterComponent from "../components/FooterComponent";
 import Separator from "../components/Separator";
-import ProductDisplay from "../components/Productpage/ProductDisplay";
-import HomepageProductsShowcase from "../components/Homepage/HomePageProductsShowcase";
-import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
-import { ShopProvider } from "../context/ShopContext";
+import SepartorNoLine from "../components/SeparatorNoLine";
 
-const ProductPasge = () => {
-  const { motorcycles, error, loading } = useFetchMotorcycles();
-
+const ProductPage = () => {
+  const { id } = useParams(); // Get the dynamic id from the URL
+  const { motorcycles, loading, error } = useFetchMotorcycles();
   const [motorcycle, setMotorcycle] = useState(null);
 
   useEffect(() => {
     if (motorcycles.length > 0) {
-      setMotorcycle(motorcycles[1]);
+      const foundMotorcycle = motorcycles.find(
+        (moto) => moto.id === parseInt(id, 10)
+      );
+      setMotorcycle(foundMotorcycle);
     }
-  }, [motorcycles]);
+  }, [motorcycles, id]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!motorcycle) return <p>Motorcycle not found.</p>;
 
   return (
-    <ShopProvider>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            {motorcycle ? (
-              <ProductDisplay motorcycle={motorcycle} />
-            ) : (
-              <p>Loading...</p>
-            )}
-            <Separator />
-            <HomepageProductsShowcase
-              productNumber={4}
-              subtitle={"Check out our diffrent motorcycles"}
-            />
-            <Separator />
-            <ServiceIcons />
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
+    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
+      <div className="flex justify-center w-screen bg-black">
+        <Container>
+          <TopHeader />
+        </Container>
       </div>
-    </ShopProvider>
+      <div className="flex justify-center w-screen bg-white">
+        <Container>
+          <Header />
+          <Breadcrumbs />
+          <ProductDisplay motorcycle={motorcycle} />
+          <Separator />
+          <ServiceIcons />
+          <SepartorNoLine />
+        </Container>
+      </div>
+      <FullWidthContainer>
+        <FooterComponent />
+      </FullWidthContainer>
+    </div>
   );
 };
 
-export default ProductPasge;
+export default ProductPage;

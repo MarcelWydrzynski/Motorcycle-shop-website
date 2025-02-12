@@ -1,6 +1,7 @@
 import React from "react";
 import { Dropdown } from "flowbite-react";
 import hamburgerIcon from "../../public/assets/Icons/services/HamburgerMenu.png";
+import { Link } from "react-router-dom";
 
 const MobileNavigation = () => {
   return (
@@ -12,10 +13,18 @@ const MobileNavigation = () => {
           <img src={hamburgerIcon} alt="Menu icon" className="w-6" />
         )}
       >
-        <Dropdown.Item className="text-center p-4 flex justify-center">Home</Dropdown.Item>
-        <Dropdown.Item className="text-center p-4 flex justify-center">Contact</Dropdown.Item>
-        <Dropdown.Item className="text-center p-4 flex justify-center">About</Dropdown.Item>
-        <Dropdown.Item className="text-center p-4 flex justify-center">Sign Up</Dropdown.Item>
+        <Dropdown.Item className="text-center p-4 flex justify-center">
+          <Link to="/">Home</Link>
+        </Dropdown.Item>
+        <Dropdown.Item className="text-center p-4 flex justify-center">
+          <Link to="/contact">Contact</Link>
+        </Dropdown.Item>
+        <Dropdown.Item className="text-center p-4 flex justify-center">
+          <Link to="/about">About</Link>
+        </Dropdown.Item>
+        <Dropdown.Item className="text-center p-4 flex justify-center">
+          <Link to="/products">Shop all</Link>
+        </Dropdown.Item>
       </Dropdown>
     </div>
   );

@@ -9,7 +9,6 @@ import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
   const { cart, wishlist } = useContext(ShopContext);
-  console.log(cart, wishlist);
   return (
     <div className="flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between">
       <Logo />

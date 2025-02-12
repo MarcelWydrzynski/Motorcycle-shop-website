@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import TopHeader from "../components/TopHeader";
 import Container from "../components/Container";
 import Header from "../components/Header";
@@ -13,31 +14,35 @@ import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 import { ShopProvider } from "../context/ShopContext";
 
 const AllProductsPage = () => {
+  const location = useLocation();
+  // Access the passed state (if available)
+  const passedCategory = location.state?.category;
+
   const { motorcycles, error, loading } = useFetchMotorcycles();
+
   const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
-  const [unfilterdList, setUnfilterdList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("None Selected");
+  const [unfilteredList, setUnfilteredList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(
+    passedCategory || "None Selected"
+  );
   const [selectedBrand, setSelectedBrand] = useState("None Selected");
   const [selectedPrice, setSelectedPrice] = useState("None Selected");
   const [sortingFilter, setSortingFilter] = useState("None Selected");
 
   useEffect(() => {
     if (motorcycles.length > 0) {
-      setUnfilterdList(motorcycles);
-    }
-  }, [motorcycles]);
-
-  useEffect(() => {
-    if (motorcycles.length > 0) {
-      setUnfilterdList(motorcycles);
+      setUnfilteredList(motorcycles);
     }
   }, [motorcycles]);
 
   useEffect(() => {
     const filterList = () => {
-      let filtered = [...unfilterdList];
+      let filtered = [...unfilteredList];
 
-      if (selectedCategory !== "None Selected") {
+      if (
+        selectedCategory !== "None Selected" &&
+        selectedCategory !== undefined
+      ) {
         filtered = filtered.filter(
           (moto) => moto.category === selectedCategory
         );
@@ -92,7 +97,7 @@ const AllProductsPage = () => {
     selectedBrand,
     selectedPrice,
     sortingFilter,
-    unfilterdList,
+    unfilteredList,
   ]);
 
   const resetFilters = () => {
@@ -100,7 +105,7 @@ const AllProductsPage = () => {
     setSelectedCategory("None Selected");
     setSelectedPrice("None Selected");
     setSortingFilter("None Selected");
-    setFilteredMotorcycles(unfilterdList);
+    setFilteredMotorcycles(unfilteredList);
   };
 
   return (
@@ -127,7 +132,7 @@ const AllProductsPage = () => {
               setSortingFilter={setSortingFilter}
             />
             {loading ? (
-              <p>loading</p>
+              <p>Loading, please wait...</p>
             ) : (
               <ProductPageProductsDisplay
                 motorcycles={filteredMotorcycles}
@@ -135,7 +140,6 @@ const AllProductsPage = () => {
                 loading={loading}
               />
             )}
-
             <Separator />
             <ServiceIcons />
           </Container>
