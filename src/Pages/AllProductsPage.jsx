@@ -110,44 +110,29 @@ const AllProductsPage = () => {
 
   return (
     <ShopProvider>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            <Filters
-              selectedCategory={selectedCategory}
-              setCategory={setSelectedCategory}
-              selectedBrand={selectedBrand}
-              setBrand={setSelectedBrand}
-              selectedPrice={selectedPrice}
-              setPrice={setSelectedPrice}
-              resetFilters={resetFilters}
-              sortingFilter={sortingFilter}
-              setSortingFilter={setSortingFilter}
-            />
-            {loading ? (
-              <p>Loading, please wait...</p>
-            ) : (
-              <ProductPageProductsDisplay
-                motorcycles={filteredMotorcycles}
-                error={error}
-                loading={loading}
-              />
-            )}
-            <Separator />
-            <ServiceIcons />
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
-      </div>
+      <Breadcrumbs />
+      <Filters
+        selectedCategory={selectedCategory}
+        setCategory={setSelectedCategory}
+        selectedBrand={selectedBrand}
+        setBrand={setSelectedBrand}
+        selectedPrice={selectedPrice}
+        setPrice={setSelectedPrice}
+        resetFilters={resetFilters}
+        sortingFilter={sortingFilter}
+        setSortingFilter={setSortingFilter}
+      />
+      {loading ? (
+        <p>Loading, please wait...</p>
+      ) : (
+        <ProductPageProductsDisplay
+          motorcycles={filteredMotorcycles}
+          error={error}
+          loading={loading}
+        />
+      )}
+      <Separator />
+      <ServiceIcons />
     </ShopProvider>
   );
 };

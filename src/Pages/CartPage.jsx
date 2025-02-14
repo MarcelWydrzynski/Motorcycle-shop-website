@@ -24,32 +24,18 @@ const CartPage = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            <Cart motorcycles={motorcycles} />
-            <div className="w-full flex justify-between">
-              <button className="font-semibold btn bg-black text-white duration-75  hover:bg-white hover:text-black hover:border-2 hover:border-black p-4 rounded border-2">
-                Return to shop
-              </button>
-              <button className="font-semibold btn bg-black text-white duration-75  hover:bg-white hover:text-black hover:border-2 hover:border-black p-4 rounded border-2">
-                Remove all
-              </button>
-            </div>
-            <CartTotal />
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
+      <Header />
+      <Breadcrumbs />
+      <Cart motorcycles={motorcycles} />
+      <div className="w-full flex justify-between">
+        <button className="font-semibold btn bg-black text-white duration-75  hover:bg-white hover:text-black hover:border-2 hover:border-black p-4 rounded border-2">
+          Return to shop
+        </button>
+        <button className="font-semibold btn bg-black text-white duration-75  hover:bg-white hover:text-black hover:border-2 hover:border-black p-4 rounded border-2">
+          Remove all
+        </button>
       </div>
+      <CartTotal />
     </>
   );
 };

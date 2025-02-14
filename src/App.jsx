@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ShopProvider } from "./context/ShopContext";
+import Layout from "./components/Layout";
 import HomePage from "./Pages/HomePage";
 import AllProductsPage from "./Pages/AllProductsPage";
 import ProductPage from "./Pages/ProductPage";
@@ -16,16 +17,17 @@ function App() {
     <ShopProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<AllProductsPage />} />
-          {/* Add this dynamic route */}
-          <Route path="/products/:id" element={<ProductPage />} />
-          <Route path="/wishlist" element={<WishlistedMotorcycles />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="products" element={<AllProductsPage />} />
+            <Route path="products/:id" element={<ProductPage />} />
+            <Route path="wishlist" element={<WishlistedMotorcycles />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
         </Routes>
       </Router>
     </ShopProvider>

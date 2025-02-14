@@ -10,31 +10,17 @@ import SeparatorNoLine from "../components/SeparatorNoLine";
 const AboutPage = () => {
   return (
     <>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            <div className="flex flex-col items-center gap-y-14">
-              <h2 className="text-8xl font-semibold max-[675px]:text-5xl">404 Not Found</h2>
-              <p className="text-2xl max-[675px]:text-xl">
-                Looks like your lost. Click below to return to home page :)
-              </p>
-              <button className="font-semibold btn bg-primaryRed text-white duration-75  hover:bg-white hover:text-primaryRed hover:border-2 hover:border-primaryRed p-4 rounded border-2">
-                Return to home page
-              </button>
-            </div>
-            <SeparatorNoLine />
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
+      <Breadcrumbs />
+      <div className="flex flex-col items-center gap-y-14">
+        <h2 className="text-8xl font-semibold max-[675px]:text-5xl">
+          404 Not Found
+        </h2>
+        <p className="text-2xl max-[675px]:text-xl">
+          Looks like your lost. Click below to return to home page :)
+        </p>
+        <button className="font-semibold btn bg-primaryRed text-white duration-75  hover:bg-white hover:text-primaryRed hover:border-2 hover:border-primaryRed p-4 rounded border-2">
+          Return to home page
+        </button>
       </div>
     </>
   );

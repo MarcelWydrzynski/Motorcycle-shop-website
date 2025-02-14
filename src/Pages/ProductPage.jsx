@@ -31,26 +31,13 @@ const ProductPage = () => {
   if (!motorcycle) return <p>Motorcycle not found.</p>;
 
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-      <div className="flex justify-center w-screen bg-black">
-        <Container>
-          <TopHeader />
-        </Container>
-      </div>
-      <div className="flex justify-center w-screen bg-white">
-        <Container>
-          <Header />
-          <Breadcrumbs />
-          <ProductDisplay motorcycle={motorcycle} />
-          <Separator />
-          <ServiceIcons />
-          <SepartorNoLine />
-        </Container>
-      </div>
-      <FullWidthContainer>
-        <FooterComponent />
-      </FullWidthContainer>
-    </div>
+    <>
+      <Breadcrumbs />
+      <ProductDisplay motorcycle={motorcycle} />
+      <Separator />
+      <ServiceIcons />
+      <SepartorNoLine />
+    </>
   );
 };
 

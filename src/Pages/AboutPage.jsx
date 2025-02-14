@@ -15,37 +15,22 @@ import SeparatorNolIne from "../components/SeparatorNoLine";
 const AboutPage = () => {
   return (
     <>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            <div className="flex justify-center max-[1200px]:flex-col">
-              <img
-                src={banner}
-                alt="Logo of iron rider garage company"
-                className="max-w-96 self-center"
-              />
-              <StoryText />
-            </div>
-            <SeparatorNolIne />
-            <AchivemntsCardsDisplay />
-            <SeparatorNolIne />
-            <TeamCardsDisplay />
-            <SeparatorNolIne />
-            <ServiceIcons />
-            <SeparatorNolIne />
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
+      <Breadcrumbs />
+      <div className="flex justify-center max-[1200px]:flex-col">
+        <img
+          src={banner}
+          alt="Logo of iron rider garage company"
+          className="max-w-96 self-center"
+        />
+        <StoryText />
       </div>
+      <SeparatorNolIne />
+      <AchivemntsCardsDisplay />
+      <SeparatorNolIne />
+      <TeamCardsDisplay />
+      <SeparatorNolIne />
+      <ServiceIcons />
+      <SeparatorNolIne />
     </>
   );
 };

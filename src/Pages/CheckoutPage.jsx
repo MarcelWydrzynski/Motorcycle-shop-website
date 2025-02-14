@@ -12,25 +12,10 @@ import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
 const CheckoutPage = () => {
   return (
     <>
-      <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
-        <div className="flex justify-center w-screen bg-black">
-          <Container>
-            <TopHeader />
-          </Container>
-        </div>
-        <div className="flex justify-center w-screen bg-white p">
-          <Container>
-            <Header />
-            <Breadcrumbs />
-            <div className="w-full flex justify-between max-[1000px]:flex-col gap-y-12 py-16">
-              <CheckoutForm />
-              <CartTotal />
-            </div>
-          </Container>
-        </div>
-        <FullWidthContainer>
-          <FooterComponent />
-        </FullWidthContainer>
+      <Breadcrumbs />
+      <div className="w-full flex justify-between max-[1000px]:flex-col gap-y-12 py-16">
+        <CheckoutForm />
+        <CartTotal />
       </div>
     </>
   );
