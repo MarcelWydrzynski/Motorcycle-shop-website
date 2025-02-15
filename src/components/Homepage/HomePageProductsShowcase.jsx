@@ -5,7 +5,7 @@ import SubTitle from "../SubTitle";
 import ProductCard from "../ProductCard";
 import useFetchRandomMotorcycles from "../../hooks/useFetchRandomMotorcycles";
 
-const ProductsShowcase = ({ productNumber, title, subtitle }) => {
+const ProductsShowcase = ({ productNumber, title, subtitle, modalOpen }) => {
   const { randomMotorcycles, error, loading } =
     useFetchRandomMotorcycles(productNumber);
 
@@ -18,7 +18,9 @@ const ProductsShowcase = ({ productNumber, title, subtitle }) => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-y-4">
+    <div
+      className={`w-full flex flex-col gap-y-4 ${modalOpen ? "-z-20" : "flex"}`}
+    >
       <SubTitle text={subtitle} />
       <Title text={title} />
 

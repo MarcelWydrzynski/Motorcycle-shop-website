@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import React, { useContext, useEffect, useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Cart from "../components/Cartpage/Cart";
 import CartTotal from "../components/Cartpage/CartTotal";
-import useFetchRandomMotorcycles from "../hooks/useFetchRandomMotorcycles";
+import { ShopContext } from "../context/ShopContext";
 
 const CartPage = () => {
-  const { randomMotorcycles, error, loading } = useFetchRandomMotorcycles(12);
-  const [motorcycles, setMotorcycles] = useState([]);
+  const { cart } = useContext(ShopContext);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
+
+  const updateCartTotalPrice = (totalPrice) => {
+    setCartTotalPrice(totalPrice);
+  };
 
   useEffect(() => {
-    if (randomMotorcycles && randomMotorcycles.length > 0) {
-      setMotorcycles(randomMotorcycles);
-    }
-  }, [randomMotorcycles]);
-
-  if (loading) return <p>Loading motorcycles...</p>;
-  if (error) return <p>Error loading motorcycles!</p>;
+    const totalPrice = cart.reduce((total, motorcycle) => {
+      const price = parseFloat(motorcycle.price.replace(/[^0-9.-]+/g, ""));
+      return total + price;
+    }, 0);
+    updateCartTotalPrice(totalPrice);
+  }, [cart]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Breadcrumbs />
       <h1 className="text-2xl font-bold">Motorcycles in your cart</h1>
       <div className="flex-col w-full flex">
-        {" "}
-        <Cart motorcycles={motorcycles} />
-        <CartTotal />
+        <Cart cart={cart} />
+        <CartTotal totalPrice={cartTotalPrice} />
       </div>
     </div>
   );

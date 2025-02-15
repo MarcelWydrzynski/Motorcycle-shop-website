@@ -1,12 +1,7 @@
 import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
 import cartIcon from "../../../public/assets/Icons/services/Cart.png";
 
-const ProductCard = ({
-  motorcycle,
-  toggleWishlisted,
-  updateCart,
-  wishlist,
-}) => {
+const ProductCard = ({ motorcycle, toggleWishlisted, updateCart }) => {
   const removeFromWishlist = () => {
     toggleWishlisted(motorcycle);
   };

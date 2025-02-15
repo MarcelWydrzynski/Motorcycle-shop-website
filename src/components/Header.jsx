@@ -14,7 +14,6 @@ const Header = () => {
     <div className="flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between gap-y-4">
       <Logo />
       <Navigation />
-      <Search />
       <div className="flex gap-6">
         <Link to="/cart">
           <div className="relative">

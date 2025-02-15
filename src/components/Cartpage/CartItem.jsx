@@ -1,59 +1,68 @@
 import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
+import React, { useState, useContext } from "react";
+import { ShopContext } from "../../context/ShopContext";
 
 const ProductCard = ({ motorcycle }) => {
-  return (
-    <>
-      <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
-        <button
-          className="absolute top-2 left-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
-          onClick={() => onDelete(motorcycle.id)}
-        >
-          <img
-            src={deleteIcon}
-            alt="heart icon on white rounded background"
-            className="w-full"
-          />
-        </button>
+  const { updateCart } = useContext(ShopContext);
 
-        <div>
-          <img
-            src={motorcycle.image}
-            alt={`${motorcycle.brand} ${motorcycle.model}`}
-          />
-        </div>
-        <div className="flex flex-col justify-between align-middle text-black px-4 gap-y-2">
-          <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
+  const onDeleteFromCart = () => {
+    updateCart(motorcycle);
+  };
+  return (
+    motorcycle && (
+      <>
+        <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
+          <button
+            className="absolute top-2 left-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
+            onClick={onDeleteFromCart}
+          >
+            <img
+              src={deleteIcon}
+              alt="heart icon on white rounded background"
+              className="w-full"
+            />
+          </button>
+
           <div>
-            <ul className="flex w-full justify-center gap-4">
-              <li className="font-bold text-primaryRed group-hover:text-black">
-                {motorcycle.horsepower} hp
-              </li>
-              <li>|</li>
-              <li className="font-bold text-primaryRed group-hover:text-black">
-                {motorcycle.category === "Electric"
-                  ? "Electric"
-                  : `${motorcycle.cc}cc`}
-              </li>
-              <li>|</li>
-              <li className="font-bold text-primaryRed group-hover:text-black">
-                {motorcycle.performance.weight}
-              </li>
-            </ul>
+            <img
+              src={motorcycle.image}
+              alt={`${motorcycle.brand} ${motorcycle.model}`}
+            />
           </div>
-          <span className="text-sm text-grey group-hover:text-black">
-            {motorcycle.short_description}
-          </span>
-          <div className="flex justify-between w-full">
-            <span className="text-xl font-bold text-primaryRed group-hover:text-black">
-              {`${motorcycle.price}`}
+          <div className="flex flex-col justify-between align-middle text-black px-4 gap-y-2">
+            <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
+            <div>
+              <ul className="flex w-full justify-center gap-4">
+                <li className="font-bold text-primaryRed group-hover:text-black">
+                  {motorcycle.horsepower} hp
+                </li>
+                <li>|</li>
+                <li className="font-bold text-primaryRed group-hover:text-black">
+                  {motorcycle.category === "Electric"
+                    ? "Electric"
+                    : `${motorcycle.cc}cc`}
+                </li>
+                <li>|</li>
+                <li className="font-bold text-primaryRed group-hover:text-black">
+                  {motorcycle.performance.weight}
+                </li>
+              </ul>
+            </div>
+            <span className="text-sm text-grey group-hover:text-black">
+              {motorcycle.short_description}
             </span>
-            <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
-              View motorcycle
-            </button>
+            <div className="flex justify-between w-full">
+              <span className="text-xl font-bold text-primaryRed group-hover:text-black">
+                {`${motorcycle.price}`}
+              </span>
+              <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
+                View motorcycle
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      </>
+    )
   );
 };
 

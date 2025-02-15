@@ -5,7 +5,6 @@ import Container from "../components/Container";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 
-
 const Layout = () => {
   return (
     <div className="flex flex-col w-full align-middle justify-centerl overflow-hidden">
@@ -20,9 +19,7 @@ const Layout = () => {
           <Outlet />
         </Container>
       </div>
-
-        <FooterComponent />
-
+      <FooterComponent />
     </div>
   );
 };

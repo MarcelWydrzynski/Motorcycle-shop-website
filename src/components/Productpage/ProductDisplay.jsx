@@ -3,18 +3,14 @@ import ProductDescription from "./ProductDescription";
 import ProductImage from "./ProductImage";
 import ImagesModal from "./ImagesModal";
 
-const ProductDisplay = ({ motorcycle }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
-  if (modalOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+const ProductDisplay = ({ motorcycle, toggleModal, modalOpen }) => {
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [modalOpen]);
 
   return (
     <div className="w-full flex max-[1000px]:flex-col">
