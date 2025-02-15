@@ -1,27 +1,35 @@
 import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
 import cartIcon from "../../../public/assets/Icons/services/Cart.png";
 
-const ProductCard = ({ motorcycle, onDelete, moveToBasket }) => {
+const ProductCard = ({
+  motorcycle,
+  toggleWishlisted,
+  updateCart,
+  wishlist,
+}) => {
+  const removeFromWishlist = () => {
+    toggleWishlisted(motorcycle);
+  };
+
+  const moveToCart = () => {
+    updateCart(motorcycle);
+    removeFromWishlist();
+  };
+
   return (
-    <>
+    motorcycle && (
       <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
         <button
           className="absolute top-2 left-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
-          onClick={() => onDelete(motorcycle.id)}
+          onClick={removeFromWishlist}
         >
-          <img
-            src={deleteIcon}
-            alt="heart icon on white rounded background"
-            className="w-full"
-          />
+          <img src={deleteIcon} alt="delete icon" className="w-full" />
         </button>
-        <button className="absolute top-2 right-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300">
-          <img
-            src={cartIcon}
-            alt="heart icon on white rounded background"
-            className="w-full"
-            onClick={() => moveToBasket()}
-          />
+        <button
+          className="absolute top-2 right-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
+          onClick={moveToCart}
+        >
+          <img src={cartIcon} alt="cart icon" className="w-full" />
         </button>
 
         <div>
@@ -62,7 +70,7 @@ const ProductCard = ({ motorcycle, onDelete, moveToBasket }) => {
           </div>
         </div>
       </div>
-    </>
+    )
   );
 };
 

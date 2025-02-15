@@ -8,8 +8,6 @@ const ProductCard = ({ motorcycle }) => {
   const { toggleWishlisted } = useContext(ShopContext);
 
   const onClick = (e) => {
-    // Prevent navigating when clicking on the wishlist button
-    e.stopPropagation();
     toggleWishlisted(motorcycle);
     setIsWishlisted(!isWishlisted);
   };
@@ -64,7 +62,6 @@ const ProductCard = ({ motorcycle }) => {
             {motorcycle.price}
           </span>
 
-          {/* Wrap the button with Link */}
           <Link to={`/products/${motorcycle.id}`}>
             <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
               View Motorcycle

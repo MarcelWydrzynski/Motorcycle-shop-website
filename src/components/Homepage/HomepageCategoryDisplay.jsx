@@ -36,7 +36,7 @@ const HomepageCategoryDisplay = () => {
           motorcycleCategories.map((category) => (
             <CategoryCard
               key={category}
-              img={categoryImages[category]} // Match image to the category
+              img={categoryImages[category]}
               text={category}
             />
           ))}

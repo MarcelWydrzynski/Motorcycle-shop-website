@@ -1,10 +1,6 @@
 import React from "react";
-import TopHeader from "../components/TopHeader";
-import Container from "../components/Container";
-import Header from "../components/Header";
+
 import Breadcrumbs from "../components/Breadcrumbs";
-import FooterComponent from "../components/FooterComponent";
-import FullWidthContainer from "../components/FullWidthContainer";
 import banner from "../../public/assets/Icons/Logo/Logo.png";
 import StoryText from "../components/Aboutuspage/StoryText";
 import AchivemntsCardsDisplay from "../components/Aboutuspage/AchivemntsCardsDisplay";

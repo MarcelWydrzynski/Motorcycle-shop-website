@@ -9,25 +9,21 @@ const ShopProvider = ({ children }) => {
   const toggleWishlisted = (motorcycle) => {
     const isInWishlist = wishlist.some((moto) => moto.id === motorcycle.id);
 
-    if (isInWishlist) {
-      setWishlist((prevWishList) =>
-        prevWishList.filter((item) => item.id !== motorcycle.id)
-      );
-    } else {
-      setWishlist((prevWishlist) => [...prevWishlist, motorcycle]);
-    }
+    setWishlist((prevWishlist) =>
+      isInWishlist
+        ? prevWishlist.filter((item) => item.id !== motorcycle.id)
+        : [...prevWishlist, motorcycle]
+    );
   };
 
   const updateCart = (motorcycle) => {
     const isInCart = cart.some((moto) => moto.id === motorcycle.id);
 
-    if (isInCart) {
-      setCart((prevCart) =>
-        prevCart.filter((item) => item.id !== motorcycle.id)
-      );
-    } else {
-      setCart((prevCart) => [...prevCart, motorcycle]);
-    }
+    setCart((prevCart) =>
+      isInCart
+        ? prevCart.filter((item) => item.id !== motorcycle.id)
+        : [...prevCart, motorcycle]
+    );
   };
 
   return (

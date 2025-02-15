@@ -6,8 +6,8 @@ const CategoryCard = ({ img, text }) => {
     <>
       {text === "None Selected" ? null : (
         <Link
-          to="/products" // Navigate to /products route
-          state={{ category: text }} // Pass selected category as state
+          to="/products"
+          state={{ category: text }}
           className="flex text-center flex-col border-2 px-12 py-8 hover:bg-primaryRed cursor-pointer ease-in-out duration-75"
         >
           <img

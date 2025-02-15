@@ -4,11 +4,11 @@ import TopHeader from "../components/TopHeader";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
-import FullWidthContainer from "../components/FullWidthContainer";
+
 
 const Layout = () => {
   return (
-    <div className="flex flex-col w-full overflow-hidden align-middle justify-center">
+    <div className="flex flex-col w-full align-middle justify-centerl overflow-hidden">
       <div className="flex justify-center w-screen bg-black">
         <Container>
           <TopHeader />
@@ -20,9 +20,9 @@ const Layout = () => {
           <Outlet />
         </Container>
       </div>
-      <FullWidthContainer>
+
         <FooterComponent />
-      </FullWidthContainer>
+
     </div>
   );
 };

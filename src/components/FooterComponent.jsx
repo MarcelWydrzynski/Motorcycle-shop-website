@@ -12,7 +12,7 @@ import {
 
 const FooterComponent = () => {
   return (
-    <Footer className="bg-black rounded-none py-12">
+    <Footer className="bg-black rounded-none py-12 mt-20">
       <div className="w-4/5 flex flex-col justify-center items-center mx-auto">
         <div className="w-full px-6 py-8 bg-red flex justify-between flex-wrap gap-y-8">
           <div className=" text-white max-[1000px]:w-1/2 flex flex-col max-[1000px]:items-center max-[650px]:w-full">

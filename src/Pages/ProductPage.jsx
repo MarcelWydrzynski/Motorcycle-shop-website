@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
-import Container from "../components/Container";
-import TopHeader from "../components/TopHeader";
-import Header from "../components/Header";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ProductDisplay from "../components/Productpage/ProductDisplay";
-import FooterComponent from "../components/FooterComponent";
 import ServiceIcons from "../components/ServiceIcons";
-import FullWidthContainer from "../components/FullWidthContainer";
+import ProductsShowcase from "../components/Homepage/HomePageProductsShowcase";
 import Separator from "../components/Separator";
-import SepartorNoLine from "../components/SeparatorNoLine";
 
 const ProductPage = () => {
   const { id } = useParams(); // Get the dynamic id from the URL
@@ -35,8 +30,12 @@ const ProductPage = () => {
       <Breadcrumbs />
       <ProductDisplay motorcycle={motorcycle} />
       <Separator />
+      <ProductsShowcase
+        productNumber={4}
+        subtitle={"Check out some more motorcycles from out stable"}
+      />
+      <Separator />
       <ServiceIcons />
-      <SepartorNoLine />
     </>
   );
 };

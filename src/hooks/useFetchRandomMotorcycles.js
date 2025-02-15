@@ -6,7 +6,7 @@ const useFetchRandomMotorcycles = (count) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("motorcycles.json")
+    fetch("/motorcycles.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(

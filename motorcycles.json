@@ -38,7 +38,6 @@
         "fuelCapacity": "16.1 liters"
       },
       "image": "/assets/motorcycles/CBR1000RR-R Fireblade.png",
-      "modalImage": "/assets/motorcycles/CBR1000RR-R Fireblade.png",
       "price": "$6,499"
     },
     {
@@ -79,7 +78,6 @@
         "fuelCapacity": "17 liters"
       },
       "image": "/assets/motorcycles/ninja h2.png",
-      "modalImage": "/assets/motorcycles/ninja h2.png",
       "price": "$29,000"
     },
     {
@@ -565,7 +563,7 @@
     {
       "id": 29,
       "brand": "Suzuki",
-      "model": "V-Strom 650",
+      "model": "V-Storm 650",
       "cc": 645,
       "horsepower": 71,
       "category": "ADV",
@@ -579,7 +577,7 @@
         "seatHeight": "835 mm",
         "fuelCapacity": "20 liters"
       },
-      "image": "/assets/motorcycles/Versys 1000.png",
+      "image": "/assets/motorcycles/V-Strom 650.png",
       "price": "$18,995"
     },
     {

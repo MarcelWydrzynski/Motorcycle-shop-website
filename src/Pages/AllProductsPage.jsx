@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import TopHeader from "../components/TopHeader";
-import Container from "../components/Container";
-import Header from "../components/Header";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Filters from "../components/Filters";
-import FooterComponent from "../components/FooterComponent";
-import FullWidthContainer from "../components/FullWidthContainer";
 import ProductPageProductsDisplay from "../components/AllProductspage/ProductPageProductsDisplay";
 import Separator from "../components/Separator";
 import ServiceIcons from "../components/ServiceIcons";
@@ -15,7 +10,6 @@ import { ShopProvider } from "../context/ShopContext";
 
 const AllProductsPage = () => {
   const location = useLocation();
-  // Access the passed state (if available)
   const passedCategory = location.state?.category;
 
   const { motorcycles, error, loading } = useFetchMotorcycles();

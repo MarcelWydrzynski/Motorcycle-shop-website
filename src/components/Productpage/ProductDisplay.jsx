@@ -16,14 +16,10 @@ const ProductDisplay = ({ motorcycle }) => {
     document.body.style.overflow = "auto";
   }
 
-  console.log(motorcycle.modalImage);
   return (
     <div className="w-full flex max-[1000px]:flex-col">
       {modalOpen && (
-        <ImagesModal
-          motorcycleImage={motorcycle.modalImage}
-          onClose={toggleModal}
-        />
+        <ImagesModal motorcycleImage={motorcycle.image} onClose={toggleModal} />
       )}
       <ProductImage motorcycle={motorcycle} onImageClick={toggleModal} />
       <ProductDescription motorcycle={motorcycle} />
