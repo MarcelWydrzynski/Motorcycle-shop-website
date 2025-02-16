@@ -11,16 +11,18 @@ import CheckoutPage from "./Pages/CheckoutPage";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
 import ErrorPage from "./Pages/ErrorPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ShopProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="products" element={<AllProductsPage />} />
-            <Route path="products/:id" element={<ProductPage />} />
+            <Route path="products/:model" element={<ProductPage />} />
             <Route path="wishlist" element={<WishlistedMotorcycles />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="checkout" element={<CheckoutPage />} />

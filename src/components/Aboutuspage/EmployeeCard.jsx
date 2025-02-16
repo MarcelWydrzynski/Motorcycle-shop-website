@@ -18,22 +18,27 @@ const EmployeeCard = ({ img, name, position }) => {
       </p>
       <div className="flex justify-start gap-4">
         <Footer.Icon
-          href="#"
+          href="https://www.facebook.com/"
+          target="blank"
           icon={BsFacebook}
           className="text-black group-hover:text-white"
         />
+
         <Footer.Icon
-          href="#"
+          href="https://www.instagram.com/"
+          target="blank"
           icon={BsInstagram}
           className="text-black group-hover:text-white"
         />
         <Footer.Icon
-          href="#"
+          href="https://x.com/home"
+          target="blank"
           icon={BsTwitter}
-          className="text-black  group-hover:text-white"
+          className="text-black group-hover:text-white"
         />
         <Footer.Icon
-          href="#"
+          href="https://www.linkedin.com/in/marcel-wydrzy%C5%84ski-23896b239/"
+          target="blank"
           icon={BsLinkedin}
           className="text-black group-hover:text-white"
         />

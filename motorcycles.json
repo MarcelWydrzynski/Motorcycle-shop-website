@@ -699,6 +699,26 @@
       },
       "image": "/assets/motorcycles/R6.png",
       "price": "$18,499"
+    },
+    {
+      "id": 36,
+      "brand": "Honda",
+      "model": "CBR600RR",
+      "cc": 599,
+      "horsepower": 121,
+      "category": "Sport",
+      "short_description": "A high-performance middleweight supersport bike, built for precision and agility.",
+      "long_description": "The 2024 Honda CBR600RR is a refined supersport motorcycle that balances power and agility. Featuring a lightweight chassis, high-revving inline-four engine, and advanced aerodynamics, it delivers exceptional handling and performance both on the road and the track. With modern electronics, including ride modes and traction control, it is perfect for riders seeking a thrilling yet controllable ride.",
+      "performance": {
+        "0-100kph": "3.1 seconds",
+        "topSpeed": "250 km/h",
+        "fuelConsumption": "5.5 L/100km",
+        "weight": "194 kg",
+        "seatHeight": "820 mm",
+        "fuelCapacity": "18.0 liters"
+      },
+      "image": "/assets/motorcycles/Honda cbr 600rr.png",
+      "price": "$4,999"
     }
   ]
 }

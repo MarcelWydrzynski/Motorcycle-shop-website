@@ -12,9 +12,12 @@ const ProductCard = ({ motorcycle }) => {
     setIsWishlisted(!isWishlisted);
   };
 
+  const generateSlug = (brand, model) => {
+    return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
+  };
 
   return (
-    <Link to={`/products/${motorcycle.id}`}>
+    <Link to={`/products/${generateSlug(motorcycle.brand, motorcycle.model)}`}>
       <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
         <button
           className={`absolute top-2 left-2 p-2 w-10 rounded-full ${

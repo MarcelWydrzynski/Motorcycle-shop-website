@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import SearchFilter from "./SearchFilter";
 import { Button } from "flowbite-react";
 import useFetchMotorcycleBrands from "../hooks/useFetchMotorcycleBrands";
@@ -6,18 +6,74 @@ import useFetchMotorcycleCategories from "../hooks/useFetchMotorcycleCategories"
 import MobileFilters from "./MobileFilters";
 
 const Filters = ({
-  setCategory,
+  motorcycles,
+  setFilteredMotorcycles,
   selectedCategory,
-  setBrand,
+  setCategory,
   selectedBrand,
-  setPrice,
+  setBrand,
   selectedPrice,
+  setPrice,
   resetFilters,
   sortingFilter,
   setSortingFilter,
 }) => {
   const { motorcycleBrands } = useFetchMotorcycleBrands();
   const { motorcycleCategories } = useFetchMotorcycleCategories();
+
+  useEffect(() => {
+    localStorage.setItem("selectedCategory", selectedCategory);
+    localStorage.setItem("selectedBrand", selectedBrand);
+    localStorage.setItem("selectedPrice", selectedPrice);
+    localStorage.setItem("sortingFilter", sortingFilter);
+  }, [selectedCategory, selectedBrand, selectedPrice, sortingFilter]);
+
+  const applyFilters = () => {
+    let filtered = [...motorcycles];
+
+    if (selectedCategory !== "None Selected") {
+      filtered = filtered.filter((moto) => moto.category === selectedCategory);
+    }
+
+    if (selectedBrand !== "None Selected") {
+      filtered = filtered.filter((moto) => moto.brand === selectedBrand);
+    }
+
+    if (selectedPrice !== "None Selected") {
+      filtered = filtered.filter((moto) => {
+        const cleanPrice = parseInt(moto.price.replace(/[$,]/g, ""), 10);
+        switch (selectedPrice) {
+          case "Under $10,000":
+            return cleanPrice < 10000;
+          case "Between $10,000 & $20,000":
+            return cleanPrice >= 10000 && cleanPrice <= 20000;
+          case "Above $20,000":
+            return cleanPrice > 20000;
+          default:
+            return true;
+        }
+      });
+    }
+
+    if (sortingFilter === "Price going up") {
+      filtered = filtered.sort((a, b) => {
+        const priceA = parseInt(a.price.replace(/[$,]/g, ""), 10);
+        const priceB = parseInt(b.price.replace(/[$,]/g, ""), 10);
+        return priceA - priceB;
+      });
+    } else if (sortingFilter === "Price going down") {
+      filtered = filtered.sort((a, b) => {
+        const priceA = parseInt(a.price.replace(/[$,]/g, ""), 10);
+        const priceB = parseInt(b.price.replace(/[$,]/g, ""), 10);
+        return priceB - priceA;
+      });
+    }
+    setFilteredMotorcycles(filtered);
+  };
+
+  useEffect(() => {
+    applyFilters();
+  }, [selectedCategory, selectedBrand, selectedPrice, sortingFilter]);
 
   return (
     <div className="flex justify-between items-center w-full">
@@ -57,7 +113,7 @@ const Filters = ({
         <Button
           color="light"
           className="focus:outline-none focus:ring-0 active:scale-110 transition-transform my-4"
-          onClick={() => resetFilters()}
+          onClick={resetFilters}
         >
           Reset Filters
         </Button>
@@ -69,8 +125,6 @@ const Filters = ({
             "None Selected",
             "Price going down",
             "Price going up",
-            "Fastest top speed",
-            "Lowest weight",
           ]}
           state={sortingFilter}
           stateSetter={setSortingFilter}

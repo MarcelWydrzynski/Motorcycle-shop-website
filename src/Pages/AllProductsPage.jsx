@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Filters from "../components/Filters";
@@ -14,18 +14,25 @@ const AllProductsPage = () => {
 
   const { motorcycles, error, loading } = useFetchMotorcycles();
 
+  const storedCategory =
+    localStorage.getItem("selectedCategory") ||
+    passedCategory ||
+    "None Selected";
+  const storedBrand = localStorage.getItem("selectedBrand") || "None Selected";
+  const storedPrice = localStorage.getItem("selectedPrice") || "None Selected";
+  const storedSortingFilter =
+    localStorage.getItem("sortingFilter") || "None Selected";
+
   const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
-  const [unfilteredList, setUnfilteredList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(
-    passedCategory || "None Selected"
-  );
-  const [selectedBrand, setSelectedBrand] = useState("None Selected");
-  const [selectedPrice, setSelectedPrice] = useState("None Selected");
-  const [sortingFilter, setSortingFilter] = useState("None Selected");
+  const [unfilteredList, setUnfilteredList] = useState([]); 
+  const [selectedCategory, setSelectedCategory] = useState(storedCategory);
+  const [selectedBrand, setSelectedBrand] = useState(storedBrand);
+  const [selectedPrice, setSelectedPrice] = useState(storedPrice);
+  const [sortingFilter, setSortingFilter] = useState(storedSortingFilter);
 
   useEffect(() => {
     if (motorcycles.length > 0) {
-      setUnfilteredList(motorcycles);
+      setUnfilteredList(motorcycles); 
     }
   }, [motorcycles]);
 
@@ -33,17 +40,16 @@ const AllProductsPage = () => {
     const filterList = () => {
       let filtered = [...unfilteredList];
 
-      if (
-        selectedCategory !== "None Selected" &&
-        selectedCategory !== undefined
-      ) {
+      if (selectedCategory !== "None Selected") {
         filtered = filtered.filter(
           (moto) => moto.category === selectedCategory
         );
       }
+
       if (selectedBrand !== "None Selected") {
         filtered = filtered.filter((moto) => moto.brand === selectedBrand);
       }
+
       if (selectedPrice !== "None Selected") {
         filtered = filtered.filter((moto) => {
           const cleanPrice = parseInt(moto.price.replace(/[$,]/g, ""), 10);
@@ -82,10 +88,13 @@ const AllProductsPage = () => {
         );
       }
 
-      return filtered;
+      setFilteredMotorcycles(filtered); 
     };
 
-    setFilteredMotorcycles(filterList());
+
+    if (unfilteredList.length > 0) {
+      filterList();
+    }
   }, [
     selectedCategory,
     selectedBrand,
@@ -95,10 +104,16 @@ const AllProductsPage = () => {
   ]);
 
   const resetFilters = () => {
-    setSelectedBrand("None Selected");
+    localStorage.removeItem("selectedCategory");
+    localStorage.removeItem("selectedBrand");
+    localStorage.removeItem("selectedPrice");
+    localStorage.removeItem("sortingFilter");
+
     setSelectedCategory("None Selected");
+    setSelectedBrand("None Selected");
     setSelectedPrice("None Selected");
     setSortingFilter("None Selected");
+
     setFilteredMotorcycles(unfilteredList);
   };
 
@@ -106,6 +121,8 @@ const AllProductsPage = () => {
     <ShopProvider>
       <Breadcrumbs />
       <Filters
+        motorcycles={motorcycles}
+        setFilteredMotorcycles={setFilteredMotorcycles}
         selectedCategory={selectedCategory}
         setCategory={setSelectedCategory}
         selectedBrand={selectedBrand}
