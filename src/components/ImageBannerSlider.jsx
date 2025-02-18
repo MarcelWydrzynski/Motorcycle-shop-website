@@ -11,7 +11,7 @@ const ImageBannerSlider = () => {
       <Carousel pauseOnHover>
         <div>
           <img src={bannerOne} className="w-full" />
-          <Link to={"/products/18"}>
+          <Link to={"/products/royal-enfield-meteor-350"}>
             <p
               className="absolute text-white text-4xl font-alumni right-10
   bottom-2 cursor-pointer transition duration-150 ease-in-out hover:scale-105
@@ -23,7 +23,7 @@ const ImageBannerSlider = () => {
         </div>
         <div>
           <img src={bannerTwo} className="w-full" />
-          <Link to={"/products/8"}>
+          <Link to={"/products/ktm-1290-super-duke-r"}>
             <p
               className="absolute text-white text-4xl font-alumni right-10
   bottom-2 cursor-pointer transition duration-150 ease-in-out hover:scale-105
@@ -33,9 +33,9 @@ const ImageBannerSlider = () => {
             </p>
           </Link>
         </div>
-        <div className=" relative w-full">
+        <div className="relative w-full">
           <img src={bannerThree} className="w-full" />
-          <Link to={"/products/24"}>
+          <Link to={"/products/ktm-790-duke"}>
             <p
               className="absolute text-white text-4xl font-alumni right-10
   bottom-2 cursor-pointer transition duration-150 ease-in-out hover:scale-105

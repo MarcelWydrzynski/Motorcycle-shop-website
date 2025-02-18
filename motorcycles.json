@@ -263,12 +263,12 @@
     {
       "id": 14,
       "brand": "Zero Motorcycles",
-      "model": "SR/F",
+      "model": "SRF",
       "cc": 0,
       "horsepower": 110,
       "category": "Electric",
       "short_description": "An all-electric naked bike offering instant torque and high performance.",
-      "long_description": "The Zero SR/F is an electric naked bike designed for everyday riders who demand high performance. With its instant torque and silent operation, it offers an eco-friendly alternative without sacrificing power and thrill.",
+      "long_description": "The Zero SRF is an electric naked bike designed for everyday riders who demand high performance. With its instant torque and silent operation, it offers an eco-friendly alternative without sacrificing power and thrill.",
       "performance": {
         "0-100kph": "3.3 seconds",
         "topSpeed": "200 km/h",

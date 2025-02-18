@@ -14,25 +14,22 @@ const AllProductsPage = () => {
 
   const { motorcycles, error, loading } = useFetchMotorcycles();
 
-  const storedCategory =
-    localStorage.getItem("selectedCategory") ||
-    passedCategory ||
-    "None Selected";
-  const storedBrand = localStorage.getItem("selectedBrand") || "None Selected";
-  const storedPrice = localStorage.getItem("selectedPrice") || "None Selected";
-  const storedSortingFilter =
-    localStorage.getItem("sortingFilter") || "None Selected";
+  // Default filter values
+  const defaultCategory = passedCategory || "None Selected";
+  const defaultBrand = "None Selected";
+  const defaultPrice = "None Selected";
+  const defaultSortingFilter = "None Selected";
 
   const [filteredMotorcycles, setFilteredMotorcycles] = useState([]);
-  const [unfilteredList, setUnfilteredList] = useState([]); 
-  const [selectedCategory, setSelectedCategory] = useState(storedCategory);
-  const [selectedBrand, setSelectedBrand] = useState(storedBrand);
-  const [selectedPrice, setSelectedPrice] = useState(storedPrice);
-  const [sortingFilter, setSortingFilter] = useState(storedSortingFilter);
+  const [unfilteredList, setUnfilteredList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
+  const [selectedBrand, setSelectedBrand] = useState(defaultBrand);
+  const [selectedPrice, setSelectedPrice] = useState(defaultPrice);
+  const [sortingFilter, setSortingFilter] = useState(defaultSortingFilter);
 
   useEffect(() => {
     if (motorcycles.length > 0) {
-      setUnfilteredList(motorcycles); 
+      setUnfilteredList(motorcycles);
     }
   }, [motorcycles]);
 
@@ -88,9 +85,8 @@ const AllProductsPage = () => {
         );
       }
 
-      setFilteredMotorcycles(filtered); 
+      setFilteredMotorcycles(filtered);
     };
-
 
     if (unfilteredList.length > 0) {
       filterList();
@@ -104,11 +100,6 @@ const AllProductsPage = () => {
   ]);
 
   const resetFilters = () => {
-    localStorage.removeItem("selectedCategory");
-    localStorage.removeItem("selectedBrand");
-    localStorage.removeItem("selectedPrice");
-    localStorage.removeItem("sortingFilter");
-
     setSelectedCategory("None Selected");
     setSelectedBrand("None Selected");
     setSelectedPrice("None Selected");

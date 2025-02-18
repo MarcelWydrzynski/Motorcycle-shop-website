@@ -36,3 +36,4 @@ const ShopProvider = ({ children }) => {
 };
 
 export { ShopContext, ShopProvider };
+

@@ -21,13 +21,6 @@ const Filters = ({
   const { motorcycleBrands } = useFetchMotorcycleBrands();
   const { motorcycleCategories } = useFetchMotorcycleCategories();
 
-  useEffect(() => {
-    localStorage.setItem("selectedCategory", selectedCategory);
-    localStorage.setItem("selectedBrand", selectedBrand);
-    localStorage.setItem("selectedPrice", selectedPrice);
-    localStorage.setItem("sortingFilter", sortingFilter);
-  }, [selectedCategory, selectedBrand, selectedPrice, sortingFilter]);
-
   const applyFilters = () => {
     let filtered = [...motorcycles];
 
@@ -121,11 +114,7 @@ const Filters = ({
       <div>
         <SearchFilter
           text={"Sort motorcycles by"}
-          options={[
-            "None Selected",
-            "Price going down",
-            "Price going up",
-          ]}
+          options={["None Selected", "Price going down", "Price going up"]}
           state={sortingFilter}
           stateSetter={setSortingFilter}
         />
