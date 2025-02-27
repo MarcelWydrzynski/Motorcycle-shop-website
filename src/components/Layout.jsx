@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import TopHeader from "../components/TopHeader";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
+import { ShopContext } from "../context/ShopContext";
 
 const Layout = () => {
 

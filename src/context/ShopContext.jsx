@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
 const ShopContext = createContext();
 
@@ -6,6 +6,8 @@ const ShopProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [alert, setAlert] = useState(false);
+  const timeoutRef = useRef(null);
 
   const toggleWishlisted = (motorcycle) => {
     const isInWishlist = wishlist.some((moto) => moto.id === motorcycle.id);
@@ -25,6 +27,16 @@ const ShopProvider = ({ children }) => {
     );
   };
 
+  const triggerAlert = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setAlert(true);
+    timeoutRef.current = setTimeout(() => {
+      setAlert(false);
+    }, 3000);
+  };
+
   useEffect(() => {
     const totalPrice = cart.reduce((total, motorcycle) => {
       const price = parseFloat(motorcycle.price.replace(/[^0-9.-]+/g, ""));
@@ -41,6 +53,8 @@ const ShopProvider = ({ children }) => {
         cart,
         updateCart,
         cartTotal,
+        alert,
+        triggerAlert,
       }}
     >
       {children}
