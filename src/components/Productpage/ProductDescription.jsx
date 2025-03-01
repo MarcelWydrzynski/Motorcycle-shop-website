@@ -2,29 +2,23 @@ import React, { useContext } from "react";
 import ServiceInfo from "./serviceInfo";
 import { ShopContext } from "../../context/ShopContext";
 import Alert from "../../components/Alert";
-import { AnimatePresence } from "framer-motion"; // Import AnimatePresence
+import { AnimatePresence, motion } from "framer-motion";
 
 const ProductDescription = ({ motorcycle }) => {
   const { updateCart, cart, alert, triggerAlert } = useContext(ShopContext);
 
   const onClick = () => {
     updateCart(motorcycle);
-    triggerAlert();
+    triggerAlert(
+      cart.some((moto) => moto.id === motorcycle.id)
+        ? "Motorcycle removed from basket!"
+        : "Motorcycle added to basket!"
+    );
   };
 
   return (
     <>
-      <AnimatePresence>
-        {alert && (
-          <Alert
-            alertMessage={
-              cart.some((moto) => moto.id === motorcycle.id)
-                ? "Motorcycle added to basket!"
-                : "Motorcycle removed from basket!"
-            }
-          />
-        )}
-      </AnimatePresence>
+      <AnimatePresence>{alert && <Alert />}</AnimatePresence>
 
       <div className="w-1/2 flex flex-col gap-y-6 max-[1000px]:w-full">
         <h2 className="text-4xl font-extrabold">
@@ -63,14 +57,15 @@ const ProductDescription = ({ motorcycle }) => {
             </li>
           </ul>
         </div>
-        <button
+        <motion.button
+          whileTap={{ scale: 1.2 }}
           onClick={onClick}
           className="font-semibold bg-primaryRed text-white border-2 duration-75 py-4 px-6 rounded w-fit hover:border-primaryRed hover:bg-white hover:text-primaryRed"
         >
           {cart.some((moto) => moto.id === motorcycle.id)
             ? "Remove from cart"
             : "Add to cart!"}
-        </button>
+        </motion.button>
         <ServiceInfo />
       </div>
     </>

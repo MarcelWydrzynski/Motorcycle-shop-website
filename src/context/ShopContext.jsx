@@ -7,6 +7,7 @@ const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [alert, setAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
   const timeoutRef = useRef(null);
 
   const toggleWishlisted = (motorcycle) => {
@@ -27,16 +28,17 @@ const ShopProvider = ({ children }) => {
     );
   };
 
-  const triggerAlert = () => {
+  const triggerAlert = (message) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
+    console.log(message);
+    setAlertMessage(message);
     setAlert(true);
     timeoutRef.current = setTimeout(() => {
       setAlert(false);
     }, 3000);
   };
-
   useEffect(() => {
     const totalPrice = cart.reduce((total, motorcycle) => {
       const price = parseFloat(motorcycle.price.replace(/[^0-9.-]+/g, ""));
@@ -55,6 +57,7 @@ const ShopProvider = ({ children }) => {
         cartTotal,
         alert,
         triggerAlert,
+        alertMessage,
       }}
     >
       {children}
