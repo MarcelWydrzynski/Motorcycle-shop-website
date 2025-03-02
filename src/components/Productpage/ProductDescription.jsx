@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import ServiceInfo from "./serviceInfo";
 import { ShopContext } from "../../context/ShopContext";
-import Alert from "../../components/Alert";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ProductDescription = ({ motorcycle }) => {
   const { updateCart, cart, alert, triggerAlert } = useContext(ShopContext);
@@ -18,8 +17,6 @@ const ProductDescription = ({ motorcycle }) => {
 
   return (
     <>
-      <AnimatePresence>{alert && <Alert />}</AnimatePresence>
-
       <div className="w-1/2 flex flex-col gap-y-6 max-[1000px]:w-full">
         <h2 className="text-4xl font-extrabold">
           {motorcycle.brand} {motorcycle.model}

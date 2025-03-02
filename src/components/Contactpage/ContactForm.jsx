@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { TextInput, Textarea } from "flowbite-react";
+import { ShopContext } from "../../context/ShopContext";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
-  console.log(name, mail, phone, comment);
+
+  const { triggerAlert } = useContext(ShopContext);
 
   const submitForm = () => {
     if (name === "" || mail === "" || phone === "" || comment === "") {
-      alert("pleasse fill out the form");
+      triggerAlert("Please fill out all inputs on the form");
     } else {
-      alert("Great succes!");
+      triggerAlert(
+        "Your form has been sent to us. Thank you for your feedback :)"
+      );
       setName("");
       setMail("");
       setPhone("");

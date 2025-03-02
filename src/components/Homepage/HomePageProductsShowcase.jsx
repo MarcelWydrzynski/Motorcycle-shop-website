@@ -26,7 +26,7 @@ const ProductsShowcase = ({ productNumber, title, subtitle, modalOpen }) => {
 
       <div className="flex flex-col gap-8">
         <div className="block min-[840px]:hidden">
-          <Carousel pauseOnHover indicators={false}>
+          <Carousel pauseOnHover>
             {randomMotorcycles.map((motorcycle) => (
               <ProductCard key={motorcycle.id} motorcycle={motorcycle} />
             ))}

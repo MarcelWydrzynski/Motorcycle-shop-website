@@ -7,7 +7,7 @@ import Alert from "../components/Alert";
 
 const ProductCard = ({ motorcycle }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
-  const { toggleWishlisted, alert, triggerAlert } = useContext(ShopContext);
+  const { toggleWishlisted, triggerAlert } = useContext(ShopContext);
 
   const onClick = () => {
     toggleWishlisted(motorcycle);
@@ -25,7 +25,6 @@ const ProductCard = ({ motorcycle }) => {
 
   return (
     <>
-      <AnimatePresence>{alert ? <Alert /> : null}</AnimatePresence>
       <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
         <motion.button
           className={`absolute top-2 left-2 p-2 w-10 rounded-full ${

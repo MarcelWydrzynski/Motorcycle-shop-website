@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ContactInfo from "../components/Contactpage/ContactInfo";
 import ContactForm from "../components/Contactpage/ContactForm";
+import { ShopContext } from "../context/ShopContext";
 
 const AboutPage = () => {
+  const { alert } = useContext(ShopContext);
+  
   return (
     <>
       <Breadcrumbs />

@@ -29,10 +29,10 @@ const ShopProvider = ({ children }) => {
   };
 
   const triggerAlert = (message) => {
+    console.log(message);
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    console.log(message);
     setAlertMessage(message);
     setAlert(true);
     timeoutRef.current = setTimeout(() => {
