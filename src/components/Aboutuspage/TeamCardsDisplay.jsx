@@ -1,12 +1,12 @@
 import React from "react";
-import TomImage from "../../../public/assets/Icons/team/Frame 874.png";
-import EmmaImage from "../../../public/assets/Icons/team/Frame 875.png";
-import WillImage from "../../../public/assets/Icons/team/Frame 876.png";
 import EmployeeCard from "./EmployeeCard";
 import Title from "../Title";
 
 
 const AchivemntsCardsDisplay = () => {
+  const TomImage = "/assets/Icons/team/Frame 874.png";
+const EmmaImage = "/assets/Icons/team/Frame 875.png";
+const WillImage = "/assets/Icons/team/Frame 876.png";
   return (
     <div className="flex flex-col gap-12">
       <Title text={"Meet our Leaders"} />

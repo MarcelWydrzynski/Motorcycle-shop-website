@@ -1,12 +1,13 @@
 import React from "react";
 import { Footer, FooterCopyright, FooterLink } from "flowbite-react";
-import sendIcon from "../../public/assets/Icons/services/send.png";
-import googleStoreIcon from "../../public/assets/Icons/services/googlestore.png";
-import appStoreIcon from "../../public/assets/Icons/services/AppStore.png";
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
+  const sendIcon = "/assets/Icons/services/send.png"
+  const googleStoreIcon = "/assets/Icons/services/googlestore.png"
+  const appStoreIcon = "/assets/Icons/services/AppStore.png"
+
   return (
     <Footer className="bg-black rounded-none py-12 mt-20 mb-0">
       <div className="w-4/5 flex flex-col justify-center items-center mx-auto">

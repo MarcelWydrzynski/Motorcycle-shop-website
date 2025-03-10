@@ -1,7 +1,4 @@
 import { useContext } from "react";
-import CartIcon from "../../public/assets/Icons/services/Cart1.png";
-import FavoriteIcon from "../../public/assets/Icons/services/Vector.png";
-import Search from "./Search";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
 import Logo from "./Logo";
@@ -10,6 +7,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const { cart, wishlist } = useContext(ShopContext);
+
+  const CartIcon = "/assets/Icons/services/Cart1.png"
+  const FavoriteIcon = "/assets/Icons/services/Vector.png"
+  
   return (
     <div className="flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between gap-y-4">
       <Logo />

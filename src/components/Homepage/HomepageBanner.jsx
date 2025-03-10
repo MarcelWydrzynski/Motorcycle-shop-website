@@ -1,7 +1,8 @@
-import Banner from "../../../public/assets/Icons/Banners/Honda-banner.jpg";
+
 import { Link } from "react-router-dom";
 
 const HomepageBanner = () => {
+  const Banner = "/assets/Icons/Banners/Honda-banner.jpg"
   return (
     <div className="w-full h-auto relative">
       <img src={Banner} alt="Honda cbr on track" />

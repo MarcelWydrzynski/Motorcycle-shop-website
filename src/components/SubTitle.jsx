@@ -1,7 +1,9 @@
 import React from "react";
-import subTitleIcon from "../../public/assets/Icons/services/Category Rectangle.png";
 
 const SubTitle = ({ text }) => {
+
+  const subTitleIcon = "/assets/Icons/services/Category Rectangle.png"
+
   return (
     <>
       {" "}

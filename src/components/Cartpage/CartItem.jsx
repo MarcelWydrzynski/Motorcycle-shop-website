@@ -1,4 +1,4 @@
-import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
+
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 
@@ -8,6 +8,9 @@ const ProductCard = ({ motorcycle }) => {
   const onDeleteFromCart = () => {
     updateCart(motorcycle);
   };
+
+  const deleteIcon = "/assets/Icons/services/icon-delete.png";
+
   return (
     motorcycle && (
       <>

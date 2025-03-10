@@ -4,6 +4,10 @@ import CustomerSupportIcon from "../../public/assets/Icons/services/CustomerSupp
 import MoneyIcon from "../../public/assets/Icons/services/MoneyBack.png";
 
 const ServiceIcons = () => {
+  const DeliveryIcon = "/assets/Icons/services/Delivery.png"
+  const CustomerSupportIcon = "/assets/Icons/services/CustomerSupport.png"
+  const MoneyIcon = "/assets/Icons/services/MoneyBack.png"
+
   return (
     <div className="w-full flex justify-center items-center">
       <ul className="flex justify-around w-full flex-wrap gap-x-4 gap-y-8">

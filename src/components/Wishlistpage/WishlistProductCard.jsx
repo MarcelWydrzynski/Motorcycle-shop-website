@@ -1,5 +1,4 @@
-import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
-import cartIcon from "../../../public/assets/Icons/services/Cart.png";
+
 
 const ProductCard = ({ motorcycle, toggleWishlisted, updateCart }) => {
   const removeFromWishlist = () => {
@@ -10,6 +9,9 @@ const ProductCard = ({ motorcycle, toggleWishlisted, updateCart }) => {
     updateCart(motorcycle);
     removeFromWishlist();
   };
+
+  const deleteIcon = "/assets/Icons/services/icon-delete.png"
+  const cartIcon = "/assets/Icons/services/Cart.png"
 
   return (
     motorcycle && (

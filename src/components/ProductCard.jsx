@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import WishlistIcon from "../../public/assets/Icons/services/Vector.png";
+import { motion } from "framer-motion";
 import { ShopContext } from "../context/ShopContext";
-import Alert from "../components/Alert";
 
 const ProductCard = ({ motorcycle }) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -22,6 +20,8 @@ const ProductCard = ({ motorcycle }) => {
   const generateSlug = (brand, model) => {
     return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
   };
+
+  const WishlistIcon = "/assets/Icons/services/Vector.png"
 
   return (
     <>

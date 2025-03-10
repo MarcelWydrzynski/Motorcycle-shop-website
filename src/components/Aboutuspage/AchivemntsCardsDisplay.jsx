@@ -1,11 +1,11 @@
 import React from "react";
-import moneyIcon from "../../../public/assets/Icons/services/Icon-Moneybag.png";
-import saleIcon from "../../../public/assets/Icons/services/Icon-Sale.png";
-import shopIcon from "../../../public/assets/Icons/services/Icon-Shop.png";
-import bagIcon from "../../../public/assets/Icons/services/Icon-Shop.png";
 import AchivmentCard from "./AchivmentCard";
 
 const AchivemntsCardsDisplay = () => {
+  const moneyIcon = "/assets/Icons/services/Icon-Moneybag.png";
+const saleIcon = "/assets/Icons/services/Icon-Sale.png";
+const shopIcon = "/assets/Icons/services/Icon-Shop.png";
+const bagIcon = "/assets/Icons/services/Icon-Shop.png";
   return (
     <div className="flex gap-12 flex-wrap justify-center">
       <AchivmentCard

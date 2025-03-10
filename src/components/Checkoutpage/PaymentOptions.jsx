@@ -1,14 +1,15 @@
 import React from "react";
 import { Label } from "flowbite-react";
-import mastercardIcon from "../../../public/assets/Icons/Payment methods/Mastercard.png";
-import visaIcon from "../../../public/assets/Icons/Payment methods/Visa.png";
-import blikIcon from "../../../public/assets/Icons/Payment methods/BLIK-LOGO-RGB.png";
 
 const PaymentOptions = ({ setPaymentOption, paymentOption }) => {
 
   const selectPaymentOption = (e) => {
     setPaymentOption(e.target.value);
   };
+
+  const mastercardIcon = "assets/Icons/services/icon-delete.png"
+  const visaIcon = "assets/Icons/services/Visa.png"
+  const blikIcon = "assets/Icons/services/BLIK-LOGO-RGB.png"
 
   return (
     <div className="flex flex-col gap-4 mt-10">

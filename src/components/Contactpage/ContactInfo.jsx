@@ -1,8 +1,9 @@
 import React from "react";
-import Mailicon from "../../../public/assets/Icons/services/icons-mail.png";
-import Phoneicon from "../../../public/assets/Icons/services/icons-phone.png";
 
 const ContactInfo = () => {
+  const mailIcon = "assets/Icons/services/icons-mail.png"
+  const Phoneicon = "assets/Icons/services/icons-phone.png"
+
   return (
     <div className=" shadow-lg px-8 py-10 w-1/3 max-[1000px]:w-full">
       <div className="flex flex-col gap-4">

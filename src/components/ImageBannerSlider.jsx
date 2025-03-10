@@ -1,11 +1,11 @@
 import { Carousel } from "flowbite-react";
 import { Link } from "react-router-dom";
-import bannerOne from "../../public/assets/Icons/Banners/Banner-1.jpg";
-import bannerTwo from "../../public/assets/Icons/Banners/Banner-2.jpeg";
-import bannerThree from "../../public/assets/Icons/Banners/Banner-3.jpeg";
-import iconLeft from "../../public/assets/Icons/services/iconLeft.png";
 
 const ImageBannerSlider = () => {
+  const bannerOne = "/assets/Icons/Banners/Banner-1.jpg";
+  const bannerTwo = "/assets/Icons/Banners/Banner-2.jpeg";
+  const bannerThree = "/assets/Icons/Banners/banner-3.jpeg";
+
   return (
     <div className="w-full h-auto">
       <Carousel pauseOnHover>

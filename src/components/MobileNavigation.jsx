@@ -4,6 +4,8 @@ import hamburgerIcon from "../../public/assets/Icons/services/HamburgerMenu.png"
 import { Link } from "react-router-dom";
 
 const MobileNavigation = () => {
+  const hamburgerIcon = "/assets/Icons/services/HamburgerMenu.png"
+
   return (
     <div className="min-[620px]:hidden bg-lightGrey rounded-xl">
       <Dropdown
