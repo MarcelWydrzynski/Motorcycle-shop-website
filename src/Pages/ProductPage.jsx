@@ -6,6 +6,7 @@ import ProductsShowcase from "../components/Homepage/HomePageProductsShowcase";
 import Separator from "../components/Separator";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { Spinner } from "flowbite-react";
 
 const ProductPage = () => {
   const generateSlug = (brand, model) => {
@@ -25,18 +26,22 @@ const ProductPage = () => {
     }
   }, [motorcycles, model]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!motorcycle) return <p>Motorcycle not found.</p>;
+  if (!motorcycle)
+    return <Spinner color="failure" aria-label="Failure spinner example" />;
 
   return (
     <>
       <Breadcrumbs />
-      <ProductDisplay
-        motorcycle={motorcycle}
-        toggleModal={() => setModalOpen(!modalOpen)}
-        modalOpen={modalOpen}
-      />
+      {loading ? (
+        <Spinner color="failure" aria-label="Failure spinner example" />
+      ) : (
+        <ProductDisplay
+          motorcycle={motorcycle}
+          toggleModal={() => setModalOpen(!modalOpen)}
+          modalOpen={modalOpen}
+        />
+      )}
+
       <Separator />
       <ProductsShowcase
         productNumber={4}

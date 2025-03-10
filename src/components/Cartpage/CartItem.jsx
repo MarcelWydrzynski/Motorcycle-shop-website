@@ -1,9 +1,9 @@
 import deleteIcon from "../../../public/assets/Icons/services/icon-delete.png";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 
 const ProductCard = ({ motorcycle }) => {
-  const { updateCart } = useContext(ShopContext);
+  const { updateCart, triggerAlert } = useContext(ShopContext);
 
   const onDeleteFromCart = () => {
     updateCart(motorcycle);
@@ -18,6 +18,7 @@ const ProductCard = ({ motorcycle }) => {
           >
             <img
               src={deleteIcon}
+              onClick={() => triggerAlert("Motorcycle removed from basket :(")}
               alt="heart icon on white rounded background"
               className="w-full"
             />

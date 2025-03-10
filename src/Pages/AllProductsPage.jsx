@@ -7,14 +7,12 @@ import Separator from "../components/Separator";
 import ServiceIcons from "../components/ServiceIcons";
 import useFetchMotorcycles from "../hooks/useFetchMotorcycles";
 import { ShopProvider } from "../context/ShopContext";
+import { Spinner } from "flowbite-react";
 
 const AllProductsPage = () => {
   const location = useLocation();
   const passedCategory = location.state?.category;
-
-  const { motorcycles, error, loading } = useFetchMotorcycles();
-
-  // Default filter values
+  const { motorcycles, loading } = useFetchMotorcycles();
   const defaultCategory = passedCategory || "None Selected";
   const defaultBrand = "None Selected";
   const defaultPrice = "None Selected";
@@ -104,7 +102,6 @@ const AllProductsPage = () => {
     setSelectedBrand("None Selected");
     setSelectedPrice("None Selected");
     setSortingFilter("None Selected");
-
     setFilteredMotorcycles(unfilteredList);
   };
 
@@ -125,14 +122,14 @@ const AllProductsPage = () => {
         setSortingFilter={setSortingFilter}
       />
       {loading ? (
-        <p>Loading, please wait...</p>
+        <Spinner color="failure" aria-label="Failure spinner example" />
       ) : (
         <ProductPageProductsDisplay
           motorcycles={filteredMotorcycles}
-          error={error}
           loading={loading}
         />
       )}
+      ;
       <Separator />
       <ServiceIcons />
     </ShopProvider>

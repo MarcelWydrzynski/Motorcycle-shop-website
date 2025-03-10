@@ -6,10 +6,9 @@ const Alert = () => {
   const { alertMessage } = useContext(ShopContext);
   return (
     <motion.div
-      className="fixed top-12 left-0 w-screen flex justify-center items-center"
+      className="fixed top-12 left-0 w-screen flex justify-center items-center z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
       <p className="bg-primaryRed p-6 text-white rounded-xl">{alertMessage}</p>

@@ -18,10 +18,6 @@ const useFetchMotorcycles = () => {
       .then((data) => {
         setMotorcycles(data.motorcycles || []);
         setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
       });
   }, []);
 

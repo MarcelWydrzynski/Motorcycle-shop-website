@@ -3,7 +3,7 @@ import useFetchMotorcycles from "./useFetchMotorcycles";
 
 const useFetchMotorcycleBrands = () => {
   const [motorcycleBrands, setMotorcycleBrands] = useState([]);
-  const { motorcycles, error, loading } = useFetchMotorcycles();
+  const { motorcycles, loading } = useFetchMotorcycles();
 
   useEffect(() => {
     const uniqueBrands = [
@@ -13,7 +13,7 @@ const useFetchMotorcycleBrands = () => {
     setMotorcycleBrands(uniqueBrands);
   }, [motorcycles]);
 
-  return { motorcycleBrands, error, loading };
+  return { motorcycleBrands, loading };
 };
 
 export default useFetchMotorcycleBrands;

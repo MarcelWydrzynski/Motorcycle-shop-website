@@ -2,6 +2,7 @@ import React from "react";
 import SubTitle from "../SubTitle";
 import Title from "../Title";
 import CategoryCard from "./CategoryCard";
+import { Spinner } from "flowbite-react";
 import useFetchMotorcycleCategories from "../../hooks/useFetchMotorcycleCategories";
 
 const categoryImages = {
@@ -15,31 +16,26 @@ const categoryImages = {
 };
 
 const HomepageCategoryDisplay = () => {
-  const { motorcycleCategories, error, loading } =
-    useFetchMotorcycleCategories();
+  const { motorcycleCategories, loading } = useFetchMotorcycleCategories();
 
   return (
     <div className="w-full flex flex-col gap-y-4">
       <SubTitle text={"Categories"} />
       <Title text={"Browse By Category"} />
       <div className="flex flex-wrap gap-4 py-8 justify-center">
-        {loading && (
-          <p className="text-lg font-semibold">Loading categories...</p>
-        )}
-        {error && (
-          <p className="text-lg font-semibold text-red-500">Error: {error}</p>
-        )}
-        {motorcycleCategories.length === 0 && !loading && !error && (
-          <p className="text-lg font-semibold">No categories available.</p>
-        )}
-        {motorcycleCategories.length > 0 &&
+        {loading ? (
+          <Spinner color="failure" />
+        ) : (
+          motorcycleCategories.length > 0 &&
           motorcycleCategories.map((category) => (
             <CategoryCard
               key={category}
               img={categoryImages[category]}
               text={category}
             />
-          ))}
+          ))
+        )}
+        {}
       </div>
     </div>
   );

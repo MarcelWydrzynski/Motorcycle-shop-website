@@ -1,7 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 
-const Cart = ({ cart, updateCartTotalPrice }) => {
+const Cart = ({ cart }) => {
   console.log(cart);
   return (
     <div className="flex flex-wrap gap-2 py-8 justify-center max-[1000px]:w-full">

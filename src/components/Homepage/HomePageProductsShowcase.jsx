@@ -1,21 +1,13 @@
 import React from "react";
-import { Carousel } from "flowbite-react";
+import { Carousel, Spinner } from "flowbite-react";
 import Title from "../Title";
 import SubTitle from "../SubTitle";
 import ProductCard from "../ProductCard";
 import useFetchRandomMotorcycles from "../../hooks/useFetchRandomMotorcycles";
 
 const ProductsShowcase = ({ productNumber, title, subtitle, modalOpen }) => {
-  const { randomMotorcycles, error, loading } =
+  const { randomMotorcycles, loading } =
     useFetchRandomMotorcycles(productNumber);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   return (
     <div
@@ -34,9 +26,13 @@ const ProductsShowcase = ({ productNumber, title, subtitle, modalOpen }) => {
         </div>
 
         <div className="hidden min-[840px]:flex gap-4 py-8 flex-wrap justify-center">
-          {randomMotorcycles.map((motorcycle) => (
-            <ProductCard key={motorcycle.id} motorcycle={motorcycle} />
-          ))}
+          {loading ? (
+            <Spinner color="failure" />
+          ) : (
+            randomMotorcycles.map((motorcycle) => (
+              <ProductCard key={motorcycle.id} motorcycle={motorcycle} />
+            ))
+          )}
         </div>
       </div>
     </div>
