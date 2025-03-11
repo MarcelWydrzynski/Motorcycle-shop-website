@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ServiceInfo from "./serviceInfo";
+import ServiceInfo from "./ServiceInfo";
 import { ShopContext } from "../../context/ShopContext";
 import { motion } from "framer-motion";
 

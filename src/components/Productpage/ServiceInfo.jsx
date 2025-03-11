@@ -1,10 +1,9 @@
 import React from "react";
 
 const ServiceInfo = () => {
-  const deliveryIcon = "/assets/Icons/services/icon-delivery.png"
-  const serviceIcon = "/assets/Icons/services/icon-service.png"
+  const deliveryIcon = "/assets/Icons/services/icon-delivery.png";
+  const serviceIcon = "/assets/Icons/services/icon-service.png";
 
-  //should work now
   return (
     <div className="flex max-[768px]:flex-col max-[768px]:items-center gap-2">
       <div className="flex border-2 border-lightGrey p-4 justify-center items-center gap-4 rounded-lg max-w-fit">
@@ -22,7 +21,8 @@ const ServiceInfo = () => {
         <div>
           <p className="font-semibold">Free Service</p>
           <p>
-            We offer free service for the first year of ownership of the motorbike
+            We offer free service for the first year of ownership of the
+            motorbike
           </p>
         </div>
       </div>
