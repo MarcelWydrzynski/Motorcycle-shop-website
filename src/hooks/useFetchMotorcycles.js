@@ -6,7 +6,7 @@ const useFetchMotorcycles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/public/motorcycles.json")
+    fetch(import.meta.env.BASE_URL + "motorcycles.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(

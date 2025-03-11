@@ -6,7 +6,7 @@ const useFetchRandomMotorcycles = (count) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/motorcycles.json")
+    fetch(import.meta.env.BASE_URL + "motorcycles.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(
