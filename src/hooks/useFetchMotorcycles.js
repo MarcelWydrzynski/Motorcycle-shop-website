@@ -6,7 +6,7 @@ const useFetchMotorcycles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/motorcycles.json")
+    fetch("/public/motorcycles.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(
