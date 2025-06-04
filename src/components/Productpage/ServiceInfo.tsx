@@ -2,7 +2,7 @@ import React from "react";
 
 const ServiceInfo = () => {
   const deliveryIcon = "/assets/Icons/services/icon-delivery.png";
-  const serviceIcon = "/assets/Icons/services/icon-service.png";
+  const serviceIcon = "/assets/Icons/services/Icon-service.png";
 
   return (
     <div className="flex max-[768px]:flex-col max-[768px]:items-center gap-2">

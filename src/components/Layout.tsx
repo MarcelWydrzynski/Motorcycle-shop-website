@@ -12,13 +12,13 @@ const Layout = () => {
   const { alert } = useContext(ShopContext);
 
   return (
-    <div className="flex flex-col w-full align-middle justify-center overflow-hidden">
+    <div className="select-none flex flex-col w-full align-middle justify-center overflow-hidden">
       <div className="flex justify-center w-screen bg-black max-[800px]:hidden">
         <Container>
           <TopHeader />
         </Container>
       </div>
-      <div className="flex justify-center w-screen bg-white">
+      <div className="flex justify-center w-screen bg-white ">
         <Container>
           <Header />
           <AnimatePresence> {alert && <Alert />}</AnimatePresence>
@@ -26,6 +26,7 @@ const Layout = () => {
           <Outlet />
         </Container>
       </div>
+
       <FooterComponent />
     </div>
   );

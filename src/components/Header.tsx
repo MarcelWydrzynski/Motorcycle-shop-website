@@ -13,7 +13,7 @@ const Header = () => {
   const FavoriteIcon = "/assets/Icons/services/Vector.png";
 
   return (
-    <div className="flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between gap-y-4">
+    <div className="select-none flex items-center w-full justify-between px-4 flex-wrap max-[530px]:justify-between gap-y-4">
       <Logo />
       <Navigation />
       <div className="flex gap-6">

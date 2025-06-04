@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import { Motorcycle } from "../../shared/types";
+import { Link } from "react-router-dom";
 
 type ProduuctCardProps = {
   motorcycle: Motorcycle;
+};
+
+const generateSlug = (brand: string, model: string) => {
+  return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
 };
 
 const ProductCard: React.FC<ProduuctCardProps> = ({ motorcycle }) => {
@@ -32,40 +37,27 @@ const ProductCard: React.FC<ProduuctCardProps> = ({ motorcycle }) => {
           </button>
 
           <div>
-            <img
-              src={motorcycle.image}
-              alt={`${motorcycle.brand} ${motorcycle.model}`}
-            />
+            <img src={motorcycle.image} alt={`${motorcycle.brand} ${motorcycle.model}`} />
           </div>
           <div className="flex flex-col justify-between align-middle text-black px-4 gap-y-2">
             <h3 className="text-xl font-bold">{`${motorcycle.brand} ${motorcycle.model}`}</h3>
             <div>
               <ul className="flex w-full justify-center gap-4">
-                <li className="font-bold text-primaryRed group-hover:text-black">
-                  {motorcycle.horsepower} hp
-                </li>
+                <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.horsepower} hp</li>
                 <li>|</li>
-                <li className="font-bold text-primaryRed group-hover:text-black">
-                  {motorcycle.category === "Electric"
-                    ? "Electric"
-                    : `${motorcycle.cc}cc`}
-                </li>
+                <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.category === "Electric" ? "Electric" : `${motorcycle.cc}cc`}</li>
                 <li>|</li>
-                <li className="font-bold text-primaryRed group-hover:text-black">
-                  {motorcycle.performance.weight}
-                </li>
+                <li className="font-bold text-primaryRed group-hover:text-black">{motorcycle.performance.weight}</li>
               </ul>
             </div>
-            <span className="text-sm text-grey group-hover:text-black">
-              {motorcycle.short_description}
-            </span>
+            <span className="text-sm text-grey group-hover:text-black">{motorcycle.short_description}</span>
             <div className="flex justify-between w-full">
-              <span className="text-xl font-bold text-primaryRed group-hover:text-black">
-                {`${motorcycle.price}`}
-              </span>
-              <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
-                View motorcycle
-              </button>
+              <span className="text-xl font-bold text-primaryRed group-hover:text-black">{`${motorcycle.price}`}</span>
+              <Link to={`/products/${generateSlug(motorcycle.brand, motorcycle.model)}`}>
+                <button className="font-semibold btn bg-black text-white duration-75 hover:bg-black group-hover:bg-white group-hover:text-black border-none py-2 px-3 rounded">
+                  View Motorcycle
+                </button>
+              </Link>
             </div>
           </div>
         </div>
