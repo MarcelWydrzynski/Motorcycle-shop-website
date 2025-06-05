@@ -41,20 +41,12 @@ const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
 
   const toggleWishlisted = (motorcycle: Motorcycle) => {
     const isInWishlist = wishlist.some((moto) => moto.id === motorcycle.id);
-    setWishlist((prevWishlist) =>
-      isInWishlist
-        ? prevWishlist.filter((item) => item.id !== motorcycle.id)
-        : [...prevWishlist, motorcycle]
-    );
+    setWishlist((prevWishlist) => (isInWishlist ? prevWishlist.filter((item) => item.id !== motorcycle.id) : [...prevWishlist, motorcycle]));
   };
 
   const updateCart = (motorcycle: Motorcycle) => {
     const isInCart = cart.some((moto) => moto.id === motorcycle.id);
-    setCart((prevCart) =>
-      isInCart
-        ? prevCart.filter((item) => item.id !== motorcycle.id)
-        : [...prevCart, motorcycle]
-    );
+    setCart((prevCart) => (isInCart ? prevCart.filter((item) => item.id !== motorcycle.id) : [...prevCart, motorcycle]));
   };
 
   const triggerAlert = (message: string) => {
@@ -88,6 +80,8 @@ const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
         alert,
         triggerAlert,
         alertMessage,
+        setCart,
+        setWishlist,
       }}
     >
       {children}

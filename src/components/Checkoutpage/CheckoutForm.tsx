@@ -1,7 +1,8 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useContext } from "react";
 import { TextInput } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { ShopContext } from "../../context/ShopContext";
 
 interface ContactFormProps {
   paymentOption: string;
@@ -18,6 +19,7 @@ type FormDataProps = {
 
 const ContactForm: React.FC<ContactFormProps> = ({ paymentOption }) => {
   const navigate = useNavigate();
+  const { triggerAlert, setCart, setWishlist } = useContext(ShopContext);
 
   const [formData, setFormData] = useState<FormDataProps>({
     name: "",
@@ -39,25 +41,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ paymentOption }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (Object.values(formData).some((value) => value.trim() === "")) {
-      alert("Please fill out all inputs");
+      triggerAlert("Please fill out all inputs");
     } else if (paymentOption === "") {
-      alert("Please select a payment option");
+      triggerAlert("Please select a payment option");
     } else {
       console.log("Form submitted:", formData);
-      setTimeout(() => {
-        alert(
-          "Order placed successfully. You will be returned to the homepage"
-        );
-        navigate("/");
-      }, 3000);
+      setCart([]);
+      setWishlist([]);
+      alert("Order placed successfully. You will be returned to the homepage");
+      navigate("/");
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex w-1/2 flex-col gap-4 max-[1000px]:w-full"
-    >
+    <form onSubmit={handleSubmit} className="flex w-1/2 flex-col gap-4 max-[1000px]:w-full">
       {Object.keys(formData).map((field) => (
         <TextInput
           key={field}
@@ -67,11 +64,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ paymentOption }) => {
           value={(formData as any)[field]}
           onChange={handleChange}
           placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-          className={`border-2 rounded-xl ${
-            (formData as any)[field] === ""
-              ? "border-primaryRed"
-              : "border-gray-300"
-          }`}
+          className={`border-2 rounded-xl ${(formData as any)[field] === "" ? "border-primaryRed" : "border-gray-300"}`}
         />
       ))}
       <button

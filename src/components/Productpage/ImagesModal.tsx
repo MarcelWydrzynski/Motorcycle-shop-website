@@ -18,7 +18,7 @@ const ImagesModal: React.FC<ImagesModalProps> = ({
   return (
     <div
       id="modal-background"
-      className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md"
+      className="z-50 fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md"
       onClick={handleBackgroundClick}
     >
       <div className="relative bg-lightGrey rounded-lg">

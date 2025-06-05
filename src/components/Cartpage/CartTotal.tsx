@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 type CartTotalProps = {
   cartTotal: number;
+
 };
 
 const CartTotal: React.FC<CartTotalProps> = ({ cartTotal }) => {

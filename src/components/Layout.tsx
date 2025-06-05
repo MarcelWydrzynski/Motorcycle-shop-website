@@ -22,8 +22,9 @@ const Layout = () => {
         <Container>
           <Header />
           <AnimatePresence> {alert && <Alert />}</AnimatePresence>
-
-          <Outlet />
+          <div className="min-h-dvh w-full">
+            <Outlet />
+          </div>
         </Container>
       </div>
 

@@ -3,15 +3,11 @@ import PaymentOptions from "./PaymentOptions";
 
 type CartTotalProps = {
   cartTotal: number;
-  setPaymentOption: () => void;
+  setPaymentOption: (value: string) => void;
   paymentOption: string;
 };
 
-const CartTotal: React.FC<CartTotalProps> = ({
-  cartTotal,
-  setPaymentOption,
-  paymentOption,
-}) => {
+const CartTotal: React.FC<CartTotalProps> = ({ cartTotal, setPaymentOption, paymentOption }) => {
   const tax = cartTotal * 0.08;
   const cartTotalWithTax = cartTotal + tax;
 
@@ -36,10 +32,7 @@ const CartTotal: React.FC<CartTotalProps> = ({
           <p>${cartTotalWithTax.toFixed(2)}</p>
         </li>
       </ul>
-      <PaymentOptions
-        setPaymentOption={setPaymentOption}
-        paymentOption={paymentOption}
-      />
+      <PaymentOptions setPaymentOption={setPaymentOption} paymentOption={paymentOption} />
     </div>
   );
 };
