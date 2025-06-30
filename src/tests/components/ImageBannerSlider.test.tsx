@@ -2,8 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe, it, expect } from "vitest";
 import ImageBannerSlider from "../../components/ImageBannerSlider";
-import { MemoryRouter } from "react-router-dom"; //
-import { FaMotorcycle } from "react-icons/fa";
+import { MemoryRouter } from "react-router-dom"; 
 
 const banners = [
   {
