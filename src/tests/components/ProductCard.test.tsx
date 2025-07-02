@@ -3,8 +3,8 @@ import "@testing-library/jest-dom";
 import { describe, it, expect } from "vitest";
 import ProductCard from "../../components/ProductCard";
 import { MemoryRouter } from "react-router-dom";
-import { Motorcycle } from "../../shared/types";
 import generateSlug from "../../hooks/genertateSlug";
+import userEvent from "@testing-library/user-event";
 
 const testMotorcycle = {
   id: 1,
@@ -98,5 +98,27 @@ describe("ProductCard", () => {
 
     const parentLink = button.closest("a");
     expect(parentLink).toHaveAttribute("href", `/products/${generateSlug(testMotorcycle.brand, testMotorcycle.model)}`);
+  });
+  it("should change the heart icon background to red when motorycycle is wishilisted and should be white when motorcycle is not whishlisted", async () => {
+    render(
+      <MemoryRouter>
+        <ProductCard motorcycle={testMotorcycle} />
+      </MemoryRouter>
+    );
+
+    const buttons = screen.getAllByRole("button");
+    const wishlistButton = buttons[0];
+
+    expect(wishlistButton).toHaveClass("bg-white");
+    expect(wishlistButton).not.toHaveClass("bg-primaryRed");
+
+    await userEvent.click(wishlistButton);
+
+    expect(wishlistButton).toHaveClass("bg-primaryRed");
+    expect(wishlistButton).not.toHaveClass("bg-white");
+
+    await userEvent.click(wishlistButton);
+
+    expect(wishlistButton).toHaveClass("bg-white");
   });
 });

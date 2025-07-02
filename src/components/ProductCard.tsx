@@ -6,7 +6,7 @@ import { Motorcycle } from "../shared/types";
 import generateSlug from "../hooks/genertateSlug";
 
 type ProductCardProps = {
-  motorcycle: Motorcycle;
+  motorcycle?: Motorcycle;
 };
 
 const ProductCard = ({ motorcycle }: ProductCardProps) => {
@@ -14,6 +14,8 @@ const ProductCard = ({ motorcycle }: ProductCardProps) => {
   const { toggleWishlisted, triggerAlert } = useContext(ShopContext);
 
   const onClick = () => {
+    if (!motorcycle) return;
+
     toggleWishlisted(motorcycle);
     setIsWishlisted(!isWishlisted);
     triggerAlert(!isWishlisted ? "Motorcycle added to wishlist!" : "Motorcycle removed from wishlist!");
@@ -63,7 +65,10 @@ const ProductCard = ({ motorcycle }: ProductCardProps) => {
           </div>
         </div>
       ) : (
-        <p>Error fetching data please try again later</p>
+        <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
+          {" "}
+          <p>Error fetching data please try again later</p>
+        </div>
       )}
     </>
   );

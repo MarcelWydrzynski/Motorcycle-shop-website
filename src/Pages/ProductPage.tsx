@@ -7,11 +7,10 @@ import Separator from "../components/Separator";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { Spinner } from "flowbite-react";
+import generateSlug from "../hooks/genertateSlug";
 
 const ProductPage = () => {
-  const generateSlug = (brand, model) => {
-    return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
-  };
+ 
   const { model } = useParams();
   const { motorcycles, loading, error } = useFetchMotorcycles();
   const [motorcycle, setMotorcycle] = useState(null);
