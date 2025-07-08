@@ -8,9 +8,9 @@ type ProductCardProps = {
   updateCart: (motorcycle: Motorcycle) => void;
 };
 
-  const generateSlug = (brand: string, model: string) => {
-    return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
-  };
+const generateSlug = (brand: string, model: string) => {
+  return `${brand}-${model}`.toLowerCase().replace(/\s+/g, "-");
+};
 
 const ProductCard: React.FC<ProductCardProps> = ({ motorcycle, toggleWishlisted, updateCart }) => {
   const removeFromWishlist = () => {
@@ -30,13 +30,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ motorcycle, toggleWishlisted,
       <div className="rounded flex flex-col max-[840px]:w-full group hover:bg-primaryRed cursor-pointer ease-in-out duration-75 px-2 py-4 w-80 bg-lightGrey relative">
         <button
           className="absolute top-2 left-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
-          onClick={removeFromWishlist}
+          data-testid="delete-btn"
         >
-          <img src={deleteIcon} alt="delete icon" className="w-full" />
+          <img src={deleteIcon} alt="delete icon" className="w-full"  />
         </button>
         <button
           className="absolute top-2 right-2 p-2.5 w-10 rounded-full group-hover:bg-white transform transition-transform duration-300"
           onClick={moveToCart}
+          data-testid="cart-btn"
         >
           <img src={cartIcon} alt="cart icon" className="w-full" />
         </button>
